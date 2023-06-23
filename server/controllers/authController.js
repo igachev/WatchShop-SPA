@@ -6,7 +6,7 @@ router.post('/register', async (req,res) => {
     const {email,password,repeatPassword} = req.body;
     try {
        const result = await authService.register(email,password,repeatPassword)
-        res.status(200).json(result)
+        res.status(201).json(result)
     } catch (err) {
         res.status(400).json({message: err.message})
     }
@@ -20,6 +20,10 @@ router.post('/login', async (req,res) => {
     } catch (err) {
         res.status(400).json({message: err.message})
     }
+})
+
+router.get('/logout',(req,res) => {
+res.status(200).json({ok:true})
 })
 
 module.exports = router
