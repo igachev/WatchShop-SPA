@@ -1,0 +1,9 @@
+.container-md-12 {
+    height: 700px;
+    background-color: grey;
+    .btn-row {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+}
