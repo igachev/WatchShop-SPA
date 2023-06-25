@@ -15,14 +15,14 @@
                 <li class="nav-item">
                     <a class="nav-link">About us</a>
                 </li>
-                <li class="nav-item">
+                <li *ngIf="!isLogged" class="nav-item">
                     <a routerLink="/login" routerLinkActive="active" class="nav-link">Login</a>
                 </li>
-                <li class="nav-item">
+                <li *ngIf="!isLogged" class="nav-item">
                     <a routerLink="/register" routerLinkActive="active" class="nav-link">Register</a>
                 </li>
-                <li class="nav-item">
-                    <a class="nav-link">Logout</a>
+                <li *ngIf="isLogged" class="nav-item">
+                    <a class="nav-link" (click)="logout()">Logout</a>
                 </li>
                         </ul>
         </div>

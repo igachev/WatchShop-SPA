@@ -9,7 +9,7 @@ import { tap } from 'rxjs/operators';
 })
 export class UserService {
   url:string = environment.apiUrl;
-  accessToken!:string
+ 
   constructor(private http: HttpClient) { }
 
   register(data: {email:string, password:string, repeatPassword:string}) {
