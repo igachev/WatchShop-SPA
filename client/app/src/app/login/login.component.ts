@@ -29,11 +29,11 @@ export class LoginComponent {
         if (err.error instanceof ErrorEvent) {
           // Client-side error occurred
           this.errorMessage = 'An error occurred. Please try again later.';
-          this.toastService.showToast('error',this.errorMessage,'top-right',true)
+          this.toastService.showToast('error',this.errorMessage,true)
         } else {
           // Server-side error occurred
           this.errorMessage = err.error.message || 'An unknown error occurred.';
-          this.toastService.showToast('error',this.errorMessage,'bottom-center',true)
+          this.toastService.showToast('error',this.errorMessage,true)
           
         }
       }

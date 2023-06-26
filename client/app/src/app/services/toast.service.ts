@@ -10,9 +10,8 @@ export class ToastService {
 
   constructor() { }
 
-  showToast(type:string,msg:string,position?:string,autoClose?:boolean): void {
+  showToast(type:string,msg:string,autoClose?:boolean): void {
     localStorage.setItem('toastType', type);
-    localStorage.setItem('toastPosition',position || 'top-right');
     this.status.next(msg);
 
     if(this.timer) {

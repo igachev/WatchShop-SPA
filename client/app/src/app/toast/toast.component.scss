@@ -4,7 +4,6 @@
     color: #fff;
     margin: 10px;
     padding: 20px 25px;
-   position: fixed; 
     z-index: 1;
     box-shadow: 0 0 12px #999;
     border-radius: 3px;
@@ -61,59 +60,17 @@
     &.info {
       background-color: #2f96b4;
       .toast-content {
+        justify-content: center;
+        align-items: center;
         .icon {
           color: #2f96b4;
           padding-left: 9px;
         }
       }
     }
-    &.top-left {
-      left: 0px;
-      top: 75px;
-    }
-    &.top-right {
-      right: 0px;
-      top: 75px;
-    }
-    &.bottom-right {
-      right: 0px;
-      bottom: 0px;
-    }
-    &.bottom-left {
-      left: 0px;
-      bottom: 0px;
-    }
-    &.bottom-center {
-      left: 500px;
-      bottom: 250px;
-      @media screen and (max-width:1029px) {
-        left: 390px;
-      }
-      @media screen and (max-width:1000px) {
-        left: 350px;
-      }
-      @media screen and (max-width:900px) {
-        left: 290px;
-      }
-      @media screen and (max-width:800px) {
-        left: 240px;
-      }
-      @media screen and (max-width:700px) {
-        left: 190px;
-      }
-      @media screen and (max-width:600px) {
-        left: 100px;
-      }
-      @media screen and (max-width:500px) {
-        left: 60px;
-      }
-      @media screen and (max-width:450px) {
-       
-        left: 30px;
-      }
-    }
+   
 
-    @media screen and (max-width:450px) {
+    @media screen and (max-width:550px) {
       width: 250px;
     }
   }
