@@ -19,7 +19,7 @@ exports.authentication = async (req,res,next) => {
 }
 
 exports.adminOnly = (req, res, next) => {
-    if (req.user.isAdmin) {
+    if (req.user?.isAdmin) {
       next(); // User is an admin, proceed to the next middleware/route handler
     } else {
       res.status(403).json({ message: 'Access denied. Admin only.' });
