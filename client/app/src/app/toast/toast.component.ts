@@ -10,14 +10,12 @@ export class ToastComponent implements OnInit {
   showToast = false;
   toastMessage = '';
   toastType = '';
-  toastPosition = '';
 
   constructor(private toastService: ToastService) {}
 
   ngOnInit(): void {
     this.toastService.status.subscribe((msg: string) => {
       this.toastType = localStorage.getItem('toastType') || '';
-      this.toastPosition = localStorage.getItem('toastPosition') || '';
       if(msg == null) {
         this.showToast = false
       }
@@ -31,6 +29,5 @@ export class ToastComponent implements OnInit {
 
   closeToast(): void {
     this.showToast = false;
-    
   }
 }

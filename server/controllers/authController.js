@@ -1,6 +1,7 @@
 
 const router = require('express').Router()
 const authService = require('../services/authService.js')
+const {getErrorMessage}= require('../utils/errorMsg.js')
 
 router.post('/register', async (req,res) => {
     const {email,password,repeatPassword} = req.body;
@@ -8,7 +9,7 @@ router.post('/register', async (req,res) => {
        const result = await authService.register(email,password,repeatPassword)
         res.status(201).json(result)
     } catch (err) {
-        res.status(400).json({message: err.message})
+        res.status(400).json({message: getErrorMessage(err)})
     }
 })
 
@@ -18,7 +19,7 @@ router.post('/login', async (req,res) => {
         const result = await authService.login(email,password)
         res.status(200).json(result)
     } catch (err) {
-        res.status(400).json({message: err.message})
+        res.status(400).json({message: getErrorMessage(err)})
     }
 })
 

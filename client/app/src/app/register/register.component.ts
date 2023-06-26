@@ -19,7 +19,7 @@ constructor(private userService: UserService,
   private toastService: ToastService) {}
 
 register(myForm:NgForm): void {
-  console.log(myForm);
+  
   const {email,password,repeatPassword} = myForm.value;
   this.userService.register({email,password,repeatPassword})
   .subscribe({
@@ -31,7 +31,9 @@ register(myForm:NgForm): void {
         // Client-side error occurred
         this.errorMessage = 'An error occurred. Please try again later.';
         this.toastService.showToast('error',this.errorMessage,true)
-      } else {
+      }
+      
+      else {
         // Server-side error occurred
         this.errorMessage = err.error.message || 'An unknown error occurred.';
         this.toastService.showToast('error',this.errorMessage,true)
