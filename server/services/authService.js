@@ -30,12 +30,15 @@ exports.login = async (email,password) => {
         throw new Error('Invalid email or password')
     }
 
-    const payload = {_id: user._id, email: user.email};
+    const isAdmin = user.isAdmin();
+
+    const payload = {_id: user._id, email: user.email,isAdmin: isAdmin};
     const token = await jwt.sign(payload, SECRET)
     
     return {
         _id: user._id,
         email: user.email,
         accessToken: token
+        
     }
 }

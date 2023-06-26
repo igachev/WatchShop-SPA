@@ -8,7 +8,8 @@ exports.authentication = async (req,res,next) => {
     if(token) {
         try {
             const decodedToken = await jwt.verify(token,SECRET);
-            req.user = decodedToken
+            req.user = decodedToken;
+            req.isAdmin = decodedToken.isAdmin;
         } catch (err) {
             res.status(401).json({message: 'Invalid token'})
         }
@@ -16,3 +17,11 @@ exports.authentication = async (req,res,next) => {
 
     next()
 }
+
+exports.adminOnly = (req, res, next) => {
+    if (req.user.isAdmin) {
+      next(); // User is an admin, proceed to the next middleware/route handler
+    } else {
+      res.status(403).json({ message: 'Access denied. Admin only.' });
+    }
+  };
