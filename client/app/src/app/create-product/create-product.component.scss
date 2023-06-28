@@ -1,0 +1,29 @@
+.container-md-12 {
+    background-color: grey;
+    height: auto;
+    
+    form {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        padding: 15px 0px;
+       
+        .row {
+            background-color: rgba(105, 107, 110, 0.904);
+            width: 90%;
+            height: 100px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 30px;
+            label {
+                color: #fff;
+                font-weight: bold;
+            }
+        }
+
+       
+    }
+    
+}
