@@ -12,6 +12,7 @@ import { FormsModule } from '@angular/forms';
 import { HTTP_INTERCEPTORS, HttpClientModule } from '@angular/common/http';
 import { AuthInterceptor } from './auth.interceptor';
 import { ToastComponent } from './toast/toast.component';
+import { CreateProductComponent } from './create-product/create-product.component';
 
 @NgModule({
   declarations: [
@@ -21,7 +22,8 @@ import { ToastComponent } from './toast/toast.component';
     LoginComponent,
     RegisterComponent,
     HomeComponent,
-    ToastComponent
+    ToastComponent,
+    CreateProductComponent
   ],
   imports: [
     BrowserModule,
