@@ -18,7 +18,7 @@ export class AuthInterceptor implements HttpInterceptor {
       const modifiedRequest = request.clone({
         setHeaders: {
           'Content-Type': 'application/json',
-          Authorization: `Bearer ${token}`
+          Authorization: `${token}`
         }
       });
 

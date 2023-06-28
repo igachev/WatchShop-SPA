@@ -24,6 +24,9 @@
                 <li *ngIf="isLogged" class="nav-item">
                     <a class="nav-link" (click)="logout()">Logout</a>
                 </li>
+                <li *ngIf="isAdmin" class="nav-item">
+                    <a class="nav-link">Create Product</a>
+                </li>
                         </ul>
         </div>
         

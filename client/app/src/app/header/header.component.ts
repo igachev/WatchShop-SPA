@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnChanges, OnInit, SimpleChanges } from '@angular/core';
 import { UserService } from '../services/user.service';
 import { Router } from '@angular/router';
 
@@ -10,8 +10,14 @@ import { Router } from '@angular/router';
 export class HeaderComponent {
 navbarOpen: boolean = false;
 
+
 constructor(private userService: UserService,
-  private router: Router) {}
+  private router: Router) {
+    
+  }
+  
+
+
 
 toggleNavbar(): void {
   this.navbarOpen = !this.navbarOpen
@@ -25,5 +31,11 @@ logout(): void {
   this.userService.logout();
   this.router.navigate(['/'])
 }
+
+get isAdmin(): boolean | undefined {
+  //console.log(this.userService.admin);
+  
+  return this.userService.isAdmin()
+} 
 
 }
