@@ -34,10 +34,6 @@ const watchSchema = new mongoose.Schema({
         required:[true,'quantity is required']
     },
    
-    owner: {
-        type: mongoose.Types.ObjectId,
-        ref:'User'
-    }
     
 })
 

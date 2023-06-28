@@ -8,6 +8,8 @@
     box-shadow: 0 0 12px #999;
     border-radius: 3px;
     display: flex;
+    justify-content: center;
+    align-items: center;
     .toast-content {
       
       .icon {
@@ -69,8 +71,18 @@
       }
     }
    
+    @media screen and (max-width:750px) {
+      width: 250px;
+    }
 
     @media screen and (max-width:550px) {
-      width: 250px;
+      width: 200px;
+    }
+
+    @media screen and (max-width:470px) {
+      width: 150px;
+    }
+    @media screen and (max-width:370px) {
+      width: 110px;
     }
   }
