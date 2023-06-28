@@ -33,18 +33,7 @@ const watchSchema = new mongoose.Schema({
         type:Number,
         required:[true,'quantity is required']
     },
-    userBoughtHistory: [
-        {
-            type: mongoose.Types.ObjectId,
-            ref:'User'
-        }
-    ],
-    shopCart: [
-        {
-            type: mongoose.Types.ObjectId,
-            ref:'User'
-        }
-    ],
+   
     owner: {
         type: mongoose.Types.ObjectId,
         ref:'User'

@@ -1,6 +1,5 @@
 const mongoose = require('mongoose')
 const bcrypt = require('bcrypt')
-const ADMIN_EMAIL = process.env.ADMIN_EMAIL;
 
 const userSchema = new mongoose.Schema({
     email: {
@@ -12,7 +11,18 @@ const userSchema = new mongoose.Schema({
         type: String,
         required: [true,'password is required'],
     },
-    
+    userBoughtHistory: [
+        {
+            type: mongoose.Types.ObjectId,
+            ref:'Watch'
+        }
+    ],
+    shopCart: [
+        {
+            type: mongoose.Types.ObjectId,
+            ref:'Watch'
+        }
+    ],
 })
 
 userSchema.pre('save', async function() {
@@ -24,10 +34,6 @@ userSchema.methods.validatePassword = async function(password) {
     return result;
 }
 
-userSchema.methods.isAdmin = function() {
-    const result = this.email == ADMIN_EMAIL
-    return result
-}
 
 const User = mongoose.model('User',userSchema)
 

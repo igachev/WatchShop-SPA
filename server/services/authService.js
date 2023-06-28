@@ -1,6 +1,6 @@
 const User = require('../models/User.js')
 const jwt = require('../promisifyToken/jsonwebtoken.js')
-
+require('dotenv').config();
 const SECRET = process.env.JWT_SECRET
 
 exports.register = async (email,password,repeatPassword) => {
@@ -30,9 +30,8 @@ exports.login = async (email,password) => {
         throw new Error('Invalid email or password')
     }
 
-    const isAdmin = user.isAdmin();
 
-    const payload = {_id: user._id, email: user.email,isAdmin: isAdmin};
+    const payload = {_id: user._id, email: user.email};
     const token = await jwt.sign(payload, SECRET)
     
     return {
