@@ -23,7 +23,7 @@ export class LoginComponent {
     this.userService.login({email,password}).subscribe({
       next: () => {
         
-        this.router.navigate(['/home'])
+        this.router.navigate(['/watches'])
       },
       error: (err:HttpErrorResponse) => {
         if (err.error instanceof ErrorEvent) {

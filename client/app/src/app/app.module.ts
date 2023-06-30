@@ -7,12 +7,12 @@ import { HeaderComponent } from './header/header.component';
 import { FooterComponent } from './footer/footer.component';
 import { LoginComponent } from './login/login.component';
 import { RegisterComponent } from './register/register.component';
-import { HomeComponent } from './home/home.component';
 import { FormsModule } from '@angular/forms';
 import { HTTP_INTERCEPTORS, HttpClientModule } from '@angular/common/http';
 import { AuthInterceptor } from './auth.interceptor';
 import { ToastComponent } from './toast/toast.component';
 import { CreateProductComponent } from './create-product/create-product.component';
+import { WatchesComponent } from './watches/watches.component';
 
 @NgModule({
   declarations: [
@@ -21,9 +21,9 @@ import { CreateProductComponent } from './create-product/create-product.componen
     FooterComponent,
     LoginComponent,
     RegisterComponent,
-    HomeComponent,
     ToastComponent,
-    CreateProductComponent
+    CreateProductComponent,
+    WatchesComponent
   ],
   imports: [
     BrowserModule,
