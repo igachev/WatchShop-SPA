@@ -15,4 +15,13 @@ res.status(201).json(result)
     }
 })
 
+router.get('/', async (req,res) => {
+    try {
+        const watches = await watchService.getAll()
+        res.status(200).json(watches)
+    } catch (err) {
+        res.status(400).json({message: getErrorMessage(err)})
+    }
+})
+
 module.exports = router;
