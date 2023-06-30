@@ -15,4 +15,8 @@ url: string = environment.apiUrl;
   create(watch:IWatch): Observable<IWatch> {
     return this.http.post<IWatch>(`${this.url}/watches/create`,watch)
   }
+
+  getAll(): Observable<IWatch[]> {
+    return this.http.get<IWatch[]>(`${this.url}/watches`)
+  }
 }
