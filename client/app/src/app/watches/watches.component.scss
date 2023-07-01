@@ -43,6 +43,19 @@
                 }
             }
         }
+                nav {
+                    
+                .pagination {
+                    flex-wrap: wrap;
+                    .page-item {
+                       .page-link {
+                        background-color: black;
+                        color: #fff;
+                       }
+                    }
+                  
+                }
+            }
        }
 }
 
