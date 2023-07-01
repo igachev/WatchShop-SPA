@@ -43,19 +43,16 @@
                 }
             }
         }
-                nav {
-                    
+                      
                 .pagination {
-                    flex-wrap: wrap;
-                    .page-item {
-                       .page-link {
                         background-color: black;
-                        color: #fff;
-                       }
-                    }
-                  
+                        color: olivedrab;
+                        justify-content: center;
+                        align-items: center;
+                        width: 350px;
+                        margin-bottom: 5px;
                 }
-            }
+            
        }
 }
 
