@@ -47,6 +47,8 @@ register(myForm:NgForm): void {
 }
 
 ngOnDestroy(): void {
-  this.subscription.unsubscribe();
+  if(this.subscription) {
+    this.subscription.unsubscribe()
+    }
 }
 }

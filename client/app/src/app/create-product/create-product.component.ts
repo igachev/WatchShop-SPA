@@ -48,6 +48,8 @@ constructor(private watchService: WatchService,
   }
 
   ngOnDestroy(): void {
+    if(this.subscription) {
     this.subscription.unsubscribe()
+    }
   }
 }
