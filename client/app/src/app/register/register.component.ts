@@ -1,18 +1,20 @@
-import { Component } from '@angular/core';
+import { Component, OnDestroy } from '@angular/core';
 import { NgForm } from '@angular/forms';
 import { UserService } from '../services/user.service';
 import { Router } from '@angular/router';
 import { ToastService } from '../services/toast.service';
 import { HttpErrorResponse } from '@angular/common/http';
+import { Subscription } from 'rxjs';
 
 @Component({
   selector: 'app-register',
   templateUrl: './register.component.html',
   styleUrls: ['./register.component.scss']
 })
-export class RegisterComponent {
+export class RegisterComponent implements OnDestroy {
 
-  errorMessage:string = '';
+  errorMessage: string = '';
+ subscription!: Subscription;
 
 constructor(private userService: UserService,
   private router: Router,
@@ -21,7 +23,7 @@ constructor(private userService: UserService,
 register(myForm:NgForm): void {
   
   const {email,password,repeatPassword} = myForm.value;
-  this.userService.register({email,password,repeatPassword})
+ this.subscription = this.userService.register({email,password,repeatPassword})
   .subscribe({
     next: () => {
       this.router.navigate(['/watches'])
@@ -42,5 +44,9 @@ register(myForm:NgForm): void {
     }
   })
   
+}
+
+ngOnDestroy(): void {
+  this.subscription.unsubscribe();
 }
 }
