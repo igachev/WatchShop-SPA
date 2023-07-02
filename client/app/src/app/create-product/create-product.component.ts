@@ -1,17 +1,20 @@
-import { Component } from '@angular/core';
+import { Component, OnDestroy } from '@angular/core';
 import { NgForm } from '@angular/forms';
 import { WatchService } from '../services/watch.service';
 import { Router } from '@angular/router';
 import { ToastService } from '../services/toast.service';
 import { HttpErrorResponse } from '@angular/common/http';
+import { Subscription } from 'rxjs';
 
 @Component({
   selector: 'app-create-product',
   templateUrl: './create-product.component.html',
   styleUrls: ['./create-product.component.scss']
 })
-export class CreateProductComponent {
+export class CreateProductComponent implements OnDestroy {
+
   errorMessage:string = '';
+  subscription!: Subscription;
 
 constructor(private watchService: WatchService,
             private router: Router,
@@ -21,7 +24,7 @@ constructor(private watchService: WatchService,
   create(myForm:NgForm): void {
     const {brand,model,image,battery,mechanism,price,quantity} = myForm.value
     const data = {brand,model,image,battery,mechanism,price,quantity}
-    this.watchService.create(data).subscribe({
+    this.subscription = this.watchService.create(data).subscribe({
       next: () => {
         myForm.reset();
         this.errorMessage = 'Successfully added new product'
@@ -42,5 +45,9 @@ constructor(private watchService: WatchService,
         }
       }
     })
+  }
+
+  ngOnDestroy(): void {
+    this.subscription.unsubscribe()
   }
 }
