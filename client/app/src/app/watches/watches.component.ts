@@ -1,6 +1,7 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnDestroy, OnInit } from '@angular/core';
 import { WatchService } from '../services/watch.service';
 import { IWatch } from '../interfaces/IWatch';
+import { Subscription } from 'rxjs';
 
 
 @Component({
@@ -8,9 +9,10 @@ import { IWatch } from '../interfaces/IWatch';
   templateUrl: './watches.component.html',
   styleUrls: ['./watches.component.scss']
 })
-export class WatchesComponent implements OnInit {
+export class WatchesComponent implements OnInit,OnDestroy {
   watches: IWatch[] = [];
   p: number = 1;
+  subscription!: Subscription;
  
   constructor(private watchService: WatchService) { }
 
@@ -19,9 +21,13 @@ export class WatchesComponent implements OnInit {
   }
 
   getAll(): void {
-    this.watchService.getAll().subscribe((data: IWatch[]) => {
+   this.subscription = this.watchService.getAll().subscribe((data: IWatch[]) => {
      this.watches = data
     })
+   }
+
+   ngOnDestroy(): void {
+     this.subscription.unsubscribe()
    }
 
 }
