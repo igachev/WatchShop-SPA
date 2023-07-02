@@ -4,6 +4,7 @@ import {environment} from '../../environments/environment.development'
 import { IUser } from '../interfaces/IUser';
 import { tap } from 'rxjs/operators';
 import { Observable } from 'rxjs';
+import { IRegister } from '../interfaces/IRegister';
 
 @Injectable({
   providedIn: 'root'
@@ -11,25 +12,24 @@ import { Observable } from 'rxjs';
 export class UserService {
   url:string = environment.apiUrl;
 
-
   constructor(private http: HttpClient) { }
 
-  
-
-  register(data: { email: string; password: string; repeatPassword: string }) {
-    return this.http.post(`${this.url}/users/register`, data);
+  register(data: IRegister): Observable<IRegister> {
+    return this.http.post<IRegister>(`${this.url}/users/register`, data);
   }
 
-  login(data: { email: string; password: string }): Observable<IUser> {
+  login(data: IUser): Observable<IUser> {
     return this.http.post<IUser>(`${this.url}/users/login`, data).pipe(
       tap((res) => {
         this.setLocalStorage(res);
         this.getAdminStatus().subscribe((adminValue) => {
-          if(Object.values(adminValue)[0] === true) {
           
+          if(Object.values(adminValue)[0] === true) {
           localStorage.setItem('owner','true')
           }
+
         });
+
       })
     );
   }
