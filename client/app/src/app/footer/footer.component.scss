@@ -1,0 +1,18 @@
+.container-fluid {
+    height: 300px;
+    .row {
+        .col-md-12 {
+            p {
+                margin: 5px 0;
+            }
+            form {
+                label {
+                    margin: 6px 0px;
+                }
+                button {
+                    margin: 8px 0px;
+                }
+            }
+        }
+    }
+}
