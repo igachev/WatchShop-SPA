@@ -11,3 +11,8 @@ exports.getAll = async () => {
 const watches = await Watch.find({})
 return watches
 }
+
+exports.getOne = async (watchId) => {
+    const watch = await Watch.findById(watchId)
+    return watch
+}
