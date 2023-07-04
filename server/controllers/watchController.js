@@ -34,7 +34,7 @@ router.get('/:watchId', async (req,res) => {
     }
 })
 
-router.delete('/:watchId', async (req,res) => {
+router.delete('/:watchId',authMiddleware.adminOnly, async (req,res) => {
     const watchId = req.params.watchId
     try {
         const watch = await watchService.deleteOne(watchId)
