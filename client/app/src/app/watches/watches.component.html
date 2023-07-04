@@ -11,7 +11,7 @@
         <p class="card-title">Model: {{watch.model}}</p>
         <p class="card-text">Price: {{watch.price}}</p>
         
-         <p class="card-text"><button class="btn btn-success">Details</button></p> 
+         <p class="card-text"><button class="btn btn-success" [routerLink]="['/watches', watch._id,'details']">Details</button></p> 
           <p class="card-text"><button class="btn btn-dark">Add To Cart</button></p>
         
         <p class="card-text"><small>You must be logged in to buy</small></p>

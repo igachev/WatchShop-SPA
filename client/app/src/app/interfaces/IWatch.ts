@@ -1,4 +1,5 @@
 export interface IWatch {
+    _id?: string;
     brand: string;
     model: string;
     image: string;
