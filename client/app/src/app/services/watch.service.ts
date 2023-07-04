@@ -19,4 +19,8 @@ url: string = environment.apiUrl;
   getAll(): Observable<IWatch[]> {
     return this.http.get<IWatch[]>(`${this.url}/watches`)
   }
+
+  getOne(watchId: string): Observable<IWatch> {
+    return this.http.get<IWatch>(`${this.url}/watches/${watchId}`)
+  }
 }

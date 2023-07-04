@@ -13,6 +13,7 @@ import { AuthInterceptor } from './auth.interceptor';
 import { ToastComponent } from './toast/toast.component';
 import { CreateProductComponent } from './create-product/create-product.component';
 import { WatchesComponent } from './watches/watches.component';
+import { DetailsComponent } from './details/details.component';
 
 @NgModule({
   declarations: [
@@ -23,7 +24,8 @@ import { WatchesComponent } from './watches/watches.component';
     RegisterComponent,
     ToastComponent,
     CreateProductComponent,
-    WatchesComponent
+    WatchesComponent,
+    DetailsComponent
   ],
   imports: [
     BrowserModule,
