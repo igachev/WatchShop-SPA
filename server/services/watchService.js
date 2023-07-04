@@ -16,3 +16,8 @@ exports.getOne = async (watchId) => {
     const watch = await Watch.findById(watchId)
     return watch
 }
+
+exports.deleteOne = async (watchId) => {
+   const watch = await Watch.findByIdAndDelete(watchId)
+   return watch
+}

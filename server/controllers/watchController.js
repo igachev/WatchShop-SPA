@@ -34,4 +34,14 @@ router.get('/:watchId', async (req,res) => {
     }
 })
 
+router.delete('/:watchId', async (req,res) => {
+    const watchId = req.params.watchId
+    try {
+        const watch = await watchService.deleteOne(watchId)
+        res.status(200).json(watch)
+    } catch (err) {
+        res.status(400).json({message: getErrorMessage(err)})
+    }
+})
+
 module.exports = router;
