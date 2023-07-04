@@ -11,14 +11,15 @@
                   <p class="card-text">Mechanism: {{watch.mechanism}}</p>
                   <p class="card-text">Price: {{watch.price}}</p>
                   <p class="card-text">Quantity: {{watch.quantity}}</p>
+                  <p *ngIf="(!isLogged && !isAdmin)" class="card-text">You must be logged in to buy</p>
 
-                  <div class="owner-btns">
-                    <button class="btn btn-primary">Edit</button>
-                    <button class="btn btn-danger">Delete</button>
+                  <div *ngIf="isAdmin" class="owner-btns">
+                    <a class="btn btn-primary">Edit</a>
+                    <a class="btn btn-danger">Delete</a>
                   </div>
 
-                  <div class="user-btns">
-                    <button class="btn btn-primary">Buy</button>
+                  <div *ngIf="(isLogged && !isAdmin)" class="user-btns">
+                    <a class="btn btn-primary">Add To Cart</a>
                   </div>
                 </div>
               
