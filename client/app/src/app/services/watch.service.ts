@@ -23,4 +23,8 @@ url: string = environment.apiUrl;
   getOne(watchId: string): Observable<IWatch> {
     return this.http.get<IWatch>(`${this.url}/watches/${watchId}`)
   }
+
+  deleteOne(watchId: string): Observable<IWatch> {
+    return this.http.delete<IWatch>(`${this.url}/watches/${watchId}`)
+  }
 }

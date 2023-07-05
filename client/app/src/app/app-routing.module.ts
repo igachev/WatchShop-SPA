@@ -12,7 +12,7 @@ const routes: Routes = [
   {path:'register',component:RegisterComponent},
   {path:'watches',component:WatchesComponent},
   {path:'watches/create', component:CreateProductComponent},
-  {path:'watches/:watchId/details',component:DetailsComponent}
+  {path:'watches/:watchId/details',component:DetailsComponent},
 ];
 
 @NgModule({

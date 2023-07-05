@@ -15,7 +15,7 @@
 
                   <div *ngIf="isAdmin" class="owner-btns">
                     <a class="btn btn-primary">Edit</a>
-                    <a class="btn btn-danger">Delete</a>
+                    <a (click)="deleteOne()" class="btn btn-danger">Delete</a>
                   </div>
 
                   <div *ngIf="(isLogged && !isAdmin)" class="user-btns">
