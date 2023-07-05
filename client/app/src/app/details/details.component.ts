@@ -14,6 +14,7 @@ import { ToastService } from '../services/toast.service';
 export class DetailsComponent implements OnInit,OnDestroy {
 watch!: IWatch;
 subscription!: Subscription;
+deleteSubscription!: Subscription;
 
 constructor(
   private watchService: WatchService,
@@ -38,7 +39,7 @@ deleteOne(): void {
   const watchId = this.activatedRoute.snapshot.params['watchId'];
   let confirmDelete = confirm('Are you sure you want to delete this item?')
   if(confirmDelete) {
-    this.watchService.deleteOne(watchId).subscribe(() => {
+   this.deleteSubscription = this.watchService.deleteOne(watchId).subscribe(() => {
       this.toastService.showToast('success','Successfully Deleted An Item',true)
       this.router.navigate(['/watches'])
     })
@@ -56,6 +57,9 @@ get isAdmin(): boolean {
 ngOnDestroy(): void {
   if(this.subscription) {
     this.subscription.unsubscribe();
+  }
+  if(this.deleteSubscription) {
+    this.deleteSubscription.unsubscribe();
   }
 }
 
