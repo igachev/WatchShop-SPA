@@ -24,6 +24,22 @@ router.get('/', async (req,res) => {
     }
 })
 
+router.get('/search', async (req,res) => {
+    const watches = await watchService.getAll();
+    res.status(200).json(watches)
+})
+
+router.post('/search', async (req,res) => {
+    const {searchValue} = req.body;
+
+    try {
+        const watches = await watchService.searchByBrand(searchValue)
+        res.status(200).json(watches)
+    } catch (err) {
+        res.status(400).json({message: getErrorMessage(err)})
+    }
+})
+
 router.get('/:watchId', async (req,res) => {
     const watchId = req.params.watchId
     try {
@@ -43,5 +59,7 @@ router.delete('/:watchId',authMiddleware.adminOnly, async (req,res) => {
         res.status(400).json({message: getErrorMessage(err)})
     }
 })
+
+
 
 module.exports = router;
