@@ -14,6 +14,9 @@ import { ToastComponent } from './toast/toast.component';
 import { CreateProductComponent } from './create-product/create-product.component';
 import { WatchesComponent } from './watches/watches.component';
 import { DetailsComponent } from './details/details.component';
+import { SpinnerBootstrapComponent } from './spinner-bootstrap/spinner-bootstrap.component';
+import { SpinnerInterceptor } from './spinner.interceptor';
+
 
 @NgModule({
   declarations: [
@@ -25,7 +28,8 @@ import { DetailsComponent } from './details/details.component';
     ToastComponent,
     CreateProductComponent,
     WatchesComponent,
-    DetailsComponent
+    DetailsComponent,
+    SpinnerBootstrapComponent
   ],
   imports: [
     BrowserModule,
@@ -35,7 +39,8 @@ import { DetailsComponent } from './details/details.component';
     NgxPaginationModule
   ],
   providers: [
-    { provide: HTTP_INTERCEPTORS, useClass: AuthInterceptor, multi: true }
+    { provide: HTTP_INTERCEPTORS, useClass: AuthInterceptor, multi: true },
+    {provide: HTTP_INTERCEPTORS, useClass: SpinnerInterceptor,multi: true}
   ],
   bootstrap: [AppComponent]
 })

@@ -14,13 +14,17 @@ export class WatchesComponent implements OnInit,OnDestroy {
   watches: IWatch[] = [];
   p: number = 1;
   subscription!: Subscription;
+  
  
   constructor(private watchService: WatchService,
     private userService: UserService) { }
 
   ngOnInit(): void {
     this.getAll();
+    
   }
+
+  
 
   getAll(): void {
    this.subscription = this.watchService.getAll().subscribe((data: IWatch[]) => {
