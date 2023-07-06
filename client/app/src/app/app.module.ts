@@ -16,6 +16,7 @@ import { WatchesComponent } from './watches/watches.component';
 import { DetailsComponent } from './details/details.component';
 import { SpinnerBootstrapComponent } from './spinner-bootstrap/spinner-bootstrap.component';
 import { SpinnerInterceptor } from './spinner.interceptor';
+import { SearchProductComponent } from './search-product/search-product.component';
 
 
 @NgModule({
@@ -29,7 +30,8 @@ import { SpinnerInterceptor } from './spinner.interceptor';
     CreateProductComponent,
     WatchesComponent,
     DetailsComponent,
-    SpinnerBootstrapComponent
+    SpinnerBootstrapComponent,
+    SearchProductComponent
   ],
   imports: [
     BrowserModule,

@@ -5,6 +5,7 @@ import { RegisterComponent } from './register/register.component';
 import { CreateProductComponent } from './create-product/create-product.component';
 import { WatchesComponent } from './watches/watches.component';
 import { DetailsComponent } from './details/details.component';
+import { SearchProductComponent } from './search-product/search-product.component';
 
 const routes: Routes = [
   {path:'',redirectTo:'/watches',pathMatch:'full'},
@@ -12,6 +13,7 @@ const routes: Routes = [
   {path:'register',component:RegisterComponent},
   {path:'watches',component:WatchesComponent},
   {path:'watches/create', component:CreateProductComponent},
+  {path:'watches/search', component:SearchProductComponent},
   {path:'watches/:watchId/details',component:DetailsComponent},
 ];
 
