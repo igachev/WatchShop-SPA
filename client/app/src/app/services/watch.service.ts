@@ -27,4 +27,8 @@ url: string = environment.apiUrl;
   deleteOne(watchId: string): Observable<IWatch> {
     return this.http.delete<IWatch>(`${this.url}/watches/${watchId}`)
   }
+
+  search(searchValue:string): Observable<IWatch[]> {
+    return this.http.post<IWatch[]>(`${this.url}/watches/search`,{searchValue})
+  }
 }
