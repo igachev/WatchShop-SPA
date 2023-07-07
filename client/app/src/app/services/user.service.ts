@@ -34,6 +34,8 @@ export class UserService {
     );
   }
 
+  
+
   setLocalStorage(authResult: any): void {
     localStorage.setItem('accessToken', authResult.accessToken);
     localStorage.setItem('_id', authResult._id);

@@ -3,6 +3,7 @@ import { Injectable } from '@angular/core';
 import {environment} from '../../environments/environment.development';
 import { IWatch } from '../interfaces/IWatch';
 import { Observable } from 'rxjs';
+import { IUser } from '../interfaces/IUser';
 
 @Injectable({
   providedIn: 'root'
@@ -26,6 +27,10 @@ url: string = environment.apiUrl;
 
   deleteOne(watchId: string): Observable<IWatch> {
     return this.http.delete<IWatch>(`${this.url}/watches/${watchId}`)
+  }
+
+  addToCart(userId:string,watchId:string): Observable<IUser> {
+    return this.http.post<IUser>(`${this.url}/watches/${watchId}`,{userId,watchId})
   }
 
   search(searchValue:string): Observable<IWatch[]> {

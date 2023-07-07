@@ -5,6 +5,7 @@ import { ActivatedRoute, Router } from '@angular/router';
 import { Subscription } from 'rxjs';
 import { UserService } from '../services/user.service';
 import { ToastService } from '../services/toast.service';
+import { HttpErrorResponse } from '@angular/common/http';
 
 @Component({
   selector: 'app-details',
@@ -15,6 +16,8 @@ export class DetailsComponent implements OnInit,OnDestroy {
 watch!: IWatch;
 subscription!: Subscription;
 deleteSubscription!: Subscription;
+cartSubscription!: Subscription;
+message!: string;
 
 constructor(
   private watchService: WatchService,
@@ -33,6 +36,32 @@ getOne(): void {
  this.subscription = this.watchService.getOne(watchId).subscribe((watch) => {
     this.watch = watch
   })
+}
+
+addToCart(): void {
+  const watchId = this.activatedRoute.snapshot.params['watchId'];
+  const userId = localStorage?.getItem('_id') || ''
+ this.cartSubscription = this.watchService.addToCart(userId,watchId).subscribe({
+    next: () => {
+      this.message = 'Added To Cart'
+      this.toastService.showToast('info',this.message,true)
+    },
+    error: (err:HttpErrorResponse) => {
+      if (err.error instanceof ErrorEvent) {
+        // Client-side error occurred
+        this.message = 'An error occurred. Please try again later.';
+        this.toastService.showToast('error',this.message,true)
+      }
+      
+      else {
+        // Server-side error occurred
+        this.message = err.error.message || 'An unknown error occurred.';
+        this.toastService.showToast('error',this.message,true)
+        
+      }
+    }
+  }
+  )
 }
 
 deleteOne(): void {
@@ -60,6 +89,9 @@ ngOnDestroy(): void {
   }
   if(this.deleteSubscription) {
     this.deleteSubscription.unsubscribe();
+  }
+  if(this.cartSubscription) {
+    this.cartSubscription.unsubscribe();
   }
 }
 
