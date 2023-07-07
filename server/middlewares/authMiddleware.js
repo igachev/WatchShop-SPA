@@ -23,6 +23,14 @@ exports.authentication = async (req,res,next) => {
     next()
 }
 
+exports.isAuthorized = (req, res, next) => {
+    if (!req.user) {
+      return res.status(401).json({ message: 'Unauthorized access' })
+    }
+  
+    next()
+  }
+
 exports.adminOnly = (req, res, next) => {
     if (req?.isAdmin) {
      // res.status(200).json({isAdmin: req.user.isAdmin})
