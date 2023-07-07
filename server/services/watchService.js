@@ -32,3 +32,4 @@ exports.searchByBrand = async (brand) => {
 
     return watches
 }
+
