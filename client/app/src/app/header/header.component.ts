@@ -9,7 +9,7 @@ import { Router } from '@angular/router';
 })
 export class HeaderComponent {
 navbarOpen: boolean = false;
-
+navbarAnimation: boolean = false;
 
 constructor(private userService: UserService,
   private router: Router) {
@@ -20,7 +20,8 @@ constructor(private userService: UserService,
 
 
 toggleNavbar(): void {
-  this.navbarOpen = !this.navbarOpen
+  this.navbarOpen = !this.navbarOpen;
+  this.navbarAnimation = !this.navbarAnimation
 }
 
 get isLogged(): boolean {

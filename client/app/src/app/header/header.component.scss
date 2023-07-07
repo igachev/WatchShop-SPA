@@ -1,4 +1,7 @@
-.navbar-brand {
+.container {
+    height: 60px;
+    transition: height 0.6s ease-out;
+    .navbar-brand {
         
         img {
             border-radius: 10px;
@@ -6,6 +9,12 @@
         }
     
 }
+}
+ 
+.container.expand-animation {
+    height: 300px;
+}
+
 
 img {
     width: 100%;
