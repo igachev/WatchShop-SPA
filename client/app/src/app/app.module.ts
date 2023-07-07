@@ -17,6 +17,7 @@ import { DetailsComponent } from './details/details.component';
 import { SpinnerBootstrapComponent } from './spinner-bootstrap/spinner-bootstrap.component';
 import { SpinnerInterceptor } from './spinner.interceptor';
 import { SearchProductComponent } from './search-product/search-product.component';
+import { NotFoundComponent } from './not-found/not-found.component';
 
 
 @NgModule({
@@ -31,7 +32,8 @@ import { SearchProductComponent } from './search-product/search-product.componen
     WatchesComponent,
     DetailsComponent,
     SpinnerBootstrapComponent,
-    SearchProductComponent
+    SearchProductComponent,
+    NotFoundComponent
   ],
   imports: [
     BrowserModule,

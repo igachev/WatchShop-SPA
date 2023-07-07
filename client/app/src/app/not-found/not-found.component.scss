@@ -1,0 +1,28 @@
+.container-fluid {
+    background-color: rgba(73, 72, 72, 0.863);
+    color: #fff;
+    .row {
+        display: flex;
+            justify-content: center;
+            align-items: center;
+        .col-md-10 {
+            h1 {
+                text-align: center;
+                font-size: 60px;
+            }
+            h2 {
+                text-align: center;
+            }
+        }
+        .img-container {
+            padding: 10px;
+            margin: 10px;
+        }
+    }
+
+    img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+}
