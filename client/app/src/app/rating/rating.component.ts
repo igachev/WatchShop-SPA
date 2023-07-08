@@ -1,20 +1,23 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnDestroy, OnInit } from '@angular/core';
 import { FormControl } from '@angular/forms';
 import { WatchService } from '../services/watch.service';
 import { ActivatedRoute } from '@angular/router';
 import { ToastService } from '../services/toast.service';
 import { HttpErrorResponse } from '@angular/common/http';
+import { Subscription } from 'rxjs';
 
 @Component({
   selector: 'app-rating',
   templateUrl: './rating.component.html',
   styleUrls: ['./rating.component.scss']
 })
-export class RatingComponent implements OnInit {
+export class RatingComponent implements OnInit, OnDestroy {
 ratingControl = new FormControl(0)
 hovered:number = 0;
 averageRating: number = 0;
-message!: string
+message!: string;
+addRatingSubscription!: Subscription;
+getRatingSubscription!: Subscription;
 
 constructor(private watchService: WatchService,
   private activatedRoute: ActivatedRoute,
@@ -29,7 +32,7 @@ addRating() {
   const watchId = this.activatedRoute.snapshot.params['watchId'];
   const userRating = Number(this.ratingControl.value)
 
-  this.watchService.rate(userId,watchId,userRating).subscribe({
+ this.addRatingSubscription = this.watchService.rate(userId,watchId,userRating).subscribe({
     next: () => {
       this.message = 'Thanks For Voting!'
       this.toastService.showToast('info',this.message,true)
@@ -55,9 +58,18 @@ addRating() {
 
 getRating(): void {
   const watchId = this.activatedRoute.snapshot.params['watchId'];
- this.watchService.getRating(watchId).subscribe((averageRating) => {
+this.getRatingSubscription = this.watchService.getRating(watchId).subscribe((averageRating) => {
   this.averageRating = averageRating
  })
+}
+
+ngOnDestroy(): void {
+  if(this.addRatingSubscription) {
+    this.addRatingSubscription.unsubscribe();
+  }
+  if(this.getRatingSubscription) {
+    this.getRatingSubscription.unsubscribe();
+  }
 }
 
 }
