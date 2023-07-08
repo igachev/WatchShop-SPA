@@ -40,4 +40,8 @@ url: string = environment.apiUrl;
   rate(userId:string,watchId:string,userRating:number): Observable<IWatch> {
     return this.http.post<IWatch>(`${this.url}/watches/${watchId}/rating`,{userId,watchId,userRating})
   }
+
+  getRating(watchId:string): Observable<number> {
+    return this.http.get<number>(`${this.url}/watches/${watchId}/rating`)
+  }
 }

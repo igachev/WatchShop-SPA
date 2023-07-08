@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { FormControl } from '@angular/forms';
 import { WatchService } from '../services/watch.service';
 import { ActivatedRoute } from '@angular/router';
@@ -10,22 +10,30 @@ import { HttpErrorResponse } from '@angular/common/http';
   templateUrl: './rating.component.html',
   styleUrls: ['./rating.component.scss']
 })
-export class RatingComponent {
+export class RatingComponent implements OnInit {
 ratingControl = new FormControl(0)
+hovered:number = 0;
+averageRating: number = 0;
 message!: string
 
 constructor(private watchService: WatchService,
   private activatedRoute: ActivatedRoute,
-  private toastService: ToastService) {}
+  private toastService: ToastService) { }
+
+  ngOnInit(): void {
+    this.getRating()
+  }
 
 addRating() {
   const userId = localStorage?.getItem('_id') || '';
   const watchId = this.activatedRoute.snapshot.params['watchId'];
   const userRating = Number(this.ratingControl.value)
+
   this.watchService.rate(userId,watchId,userRating).subscribe({
     next: () => {
       this.message = 'Thanks For Voting!'
       this.toastService.showToast('info',this.message,true)
+      this.getRating()
     },
     error: (err:HttpErrorResponse) => {
       if (err.error instanceof ErrorEvent) {
@@ -44,4 +52,12 @@ addRating() {
   })
   
 }
+
+getRating(): void {
+  const watchId = this.activatedRoute.snapshot.params['watchId'];
+ this.watchService.getRating(watchId).subscribe((averageRating) => {
+  this.averageRating = averageRating
+ })
+}
+
 }
