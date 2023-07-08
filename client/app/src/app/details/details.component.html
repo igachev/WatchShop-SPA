@@ -1,5 +1,5 @@
 <div *ngIf="watch" class="container-fluid">
-
+  
     <div class="row">
         
             <div class="card mb-3 bg-dark text-light">
@@ -11,7 +11,7 @@
                   <p class="card-text">Mechanism: {{watch.mechanism}}</p>
                   <p class="card-text">Price: {{watch.price}}</p>
                   <p class="card-text">Quantity: {{watch.quantity}}</p>
-
+                  <p class="card-text"><app-rating></app-rating></p>
                   <app-toast></app-toast>
                   
                   <p *ngIf="(!isLogged && !isAdmin)" class="card-text">You must be logged in to buy</p>

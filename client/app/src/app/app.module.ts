@@ -7,7 +7,7 @@ import { HeaderComponent } from './header/header.component';
 import { FooterComponent } from './footer/footer.component';
 import { LoginComponent } from './login/login.component';
 import { RegisterComponent } from './register/register.component';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HTTP_INTERCEPTORS, HttpClientModule } from '@angular/common/http';
 import { AuthInterceptor } from './auth.interceptor';
 import { ToastComponent } from './toast/toast.component';
@@ -18,6 +18,10 @@ import { SpinnerBootstrapComponent } from './spinner-bootstrap/spinner-bootstrap
 import { SpinnerInterceptor } from './spinner.interceptor';
 import { SearchProductComponent } from './search-product/search-product.component';
 import { NotFoundComponent } from './not-found/not-found.component';
+import { RatingComponent } from './rating/rating.component';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+
+
 
 
 @NgModule({
@@ -33,14 +37,18 @@ import { NotFoundComponent } from './not-found/not-found.component';
     DetailsComponent,
     SpinnerBootstrapComponent,
     SearchProductComponent,
-    NotFoundComponent
+    NotFoundComponent,
+    RatingComponent,
+    
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     FormsModule,
     HttpClientModule,
-    NgxPaginationModule
+    NgxPaginationModule,
+    NgbModule,
+    ReactiveFormsModule
   ],
   providers: [
     { provide: HTTP_INTERCEPTORS, useClass: AuthInterceptor, multi: true },

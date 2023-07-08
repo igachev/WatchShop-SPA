@@ -33,7 +33,16 @@ const watchSchema = new mongoose.Schema({
         type:Number,
         required:[true,'quantity is required']
     },
-   
+    rating: [
+        {
+            userId: {
+                type: String
+            },
+            userRating: {
+                type: Number
+            }
+        }
+    ]
     
 })
 

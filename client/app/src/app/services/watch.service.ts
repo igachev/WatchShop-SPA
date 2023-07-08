@@ -36,4 +36,8 @@ url: string = environment.apiUrl;
   search(searchValue:string): Observable<IWatch[]> {
     return this.http.post<IWatch[]>(`${this.url}/watches/search`,{searchValue})
   }
+
+  rate(userId:string,watchId:string,userRating:number): Observable<IWatch> {
+    return this.http.post<IWatch>(`${this.url}/watches/${watchId}/rating`,{userId,watchId,userRating})
+  }
 }

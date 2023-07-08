@@ -7,4 +7,5 @@ export interface IWatch {
     mechanism: 'mechanical' | 'automatic' | 'quartz';
     price: number;
     quantity: number;
+    rating?: object[];
 }

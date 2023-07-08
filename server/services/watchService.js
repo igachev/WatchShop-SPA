@@ -33,3 +33,26 @@ exports.searchByBrand = async (brand) => {
     return watches
 }
 
+exports.rate = async (userId,watchId,userRating) => {
+
+    const watch = await Watch.findById(watchId)
+
+    const alreadyRate = watch.rating.find((w) => w.userId == userId)
+
+    if(alreadyRate) {
+        throw new Error('User already rate')
+    }
+
+    const updatedRating = await Watch.findOneAndUpdate(
+        { _id:watchId },
+        { $push: { rating: { userId,userRating } } },
+        { new: true }
+      );
+    
+      if (!updatedRating) {
+        throw new Error('Invalid watch');
+      }
+    
+      return updatedRating;
+
+}
