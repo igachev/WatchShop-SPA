@@ -5,6 +5,7 @@ import { IUser } from '../interfaces/IUser';
 import { tap } from 'rxjs/operators';
 import { Observable } from 'rxjs';
 import { IRegister } from '../interfaces/IRegister';
+import { ILogin } from '../interfaces/ILogin';
 
 @Injectable({
   providedIn: 'root'
@@ -18,8 +19,8 @@ export class UserService {
     return this.http.post<IRegister>(`${this.url}/users/register`, data);
   }
 
-  login(data: IUser): Observable<IUser> {
-    return this.http.post<IUser>(`${this.url}/users/login`, data).pipe(
+  login(data: ILogin): Observable<ILogin> {
+    return this.http.post<ILogin>(`${this.url}/users/login`, data).pipe(
       tap((res) => {
         this.setLocalStorage(res);
         this.getAdminStatus().subscribe((adminValue) => {

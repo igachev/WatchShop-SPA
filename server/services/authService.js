@@ -43,15 +43,15 @@ exports.login = async (email,password) => {
 }
 
 exports.addToCart = async (_id,watchId) => {
-const user = await User.findOne({_id})
-
-if(!user) {
-    throw new Error('Invalid user')
-}
-
-    user.shopCart.push(watchId)
-    await user.save()
-
-
-return user;
+    const updatedUser = await User.findOneAndUpdate(
+        { _id },
+        { $push: { shopCart: watchId } },
+        { new: true }
+      );
+    
+      if (!updatedUser) {
+        throw new Error('Invalid user');
+      }
+    
+      return updatedUser;
 }
