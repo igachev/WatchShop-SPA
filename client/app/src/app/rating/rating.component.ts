@@ -5,6 +5,7 @@ import { ActivatedRoute } from '@angular/router';
 import { ToastService } from '../services/toast.service';
 import { HttpErrorResponse } from '@angular/common/http';
 import { Subscription } from 'rxjs';
+import { UserService } from '../services/user.service';
 
 @Component({
   selector: 'app-rating',
@@ -21,7 +22,8 @@ getRatingSubscription!: Subscription;
 
 constructor(private watchService: WatchService,
   private activatedRoute: ActivatedRoute,
-  private toastService: ToastService) { }
+  private toastService: ToastService,
+  private userService: UserService) { }
 
   ngOnInit(): void {
     this.getRating()
@@ -61,6 +63,14 @@ getRating(): void {
 this.getRatingSubscription = this.watchService.getRating(watchId).subscribe((averageRating) => {
   this.averageRating = averageRating
  })
+}
+
+get isLogged(): boolean {
+  return this.userService.isLogged();
+}
+
+get isAdmin(): boolean {
+  return this.userService.isAdmin()
 }
 
 ngOnDestroy(): void {
