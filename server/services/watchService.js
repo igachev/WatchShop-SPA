@@ -56,3 +56,13 @@ exports.rate = async (userId,watchId,userRating) => {
       return updatedRating;
 
 }
+
+exports.getRating = async (watchId) => {
+    const watch = await Watch.findById(watchId)
+    const sumRating = watch.rating.reduce((a,c) => {
+       return a + c.userRating;
+    },0);
+    const totalUsers = watch.rating.length;
+    const averageRating = sumRating / totalUsers || 0
+    return averageRating
+}

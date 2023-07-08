@@ -63,6 +63,17 @@ router.post('/:watchId/rating', authMiddleware.isAuthorized, async (req,res) => 
     }
 })
 
+router.get('/:watchId/rating', async (req,res) => {
+    const watchId = req.params.watchId;
+
+    try {
+        const avgRating = await watchService.getRating(watchId)
+        res.status(200).json(avgRating)
+    } catch (err) {
+        res.status(400).json({message: getErrorMessage(err)})
+    }
+})
+
 router.post('/:watchId',authMiddleware.isAuthorized, async (req,res) => {
     const watchId = req.params.watchId;
     const userId = req.user?._id;
