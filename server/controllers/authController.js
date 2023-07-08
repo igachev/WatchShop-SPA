@@ -2,6 +2,7 @@
 const router = require('express').Router()
 const authService = require('../services/authService.js')
 const {getErrorMessage}= require('../utils/errorMsg.js')
+const authMiddleware = require('../middlewares/authMiddleware.js')
 
 router.post('/register', async (req,res) => {
     const {email,password,repeatPassword} = req.body;
@@ -33,5 +34,16 @@ router.get('/isAdmin', (req, res) => {
  //   console.log(isAdmin);
     res.status(200).json({ isAdmin });
   });
+
+router.get('/cart', authMiddleware.isAuthorized, async (req,res) => {
+const {userId} = req.body
+
+try {
+    const cartItems = await authService.getAllCartProducts(userId);
+    res.status(200).json(cartItems)
+} catch (err) {
+    res.status(400).json({message: getErrorMessage(err)})
+}
+})
 
 module.exports = router

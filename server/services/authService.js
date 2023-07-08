@@ -55,3 +55,10 @@ exports.addToCart = async (_id,watchId) => {
     
       return updatedUser;
 }
+
+exports.getAllCartProducts = async (userId) => {
+const cartItems = await User.findById(userId).populate('shopCart')
+
+return cartItems.shopCart
+
+}
