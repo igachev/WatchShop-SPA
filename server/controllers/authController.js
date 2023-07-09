@@ -46,4 +46,16 @@ try {
 }
 })
 
+router.delete('/:userId/cart/:watchId', authMiddleware.isAuthorized, async (req,res) => {
+    const userId = req.params.userId
+    const watchId = req.params.watchId
+
+    try {
+        const deleteFromCart = await authService.deleteWatchFromCart(userId,watchId)
+        res.status(200).json(deleteFromCart)
+    } catch (err) {
+        res.status(400).json({message: getErrorMessage(err)})
+    }
+})
+
 module.exports = router

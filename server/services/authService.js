@@ -62,3 +62,8 @@ const cartItems = await User.findById(userId).populate('shopCart')
 return cartItems.shopCart
 
 }
+
+exports.deleteWatchFromCart = async (userId,watchId) => {
+   await User.findByIdAndUpdate(userId, { $pull: { shopCart: watchId } });
+   return watchId
+}
