@@ -1,11 +1,23 @@
 .container-fluid {
     background-color: grey;
+    min-height: 600px;
     .main-row {
         padding: 10px;
+       
         .card {
             background-color: rgba(73, 72, 72, 0.863);
             padding: 8px;
             margin: 10px;
+            form {
+                small {
+                    color: rgba(238, 57, 57, 0.89);
+                }
+            }
         }
+    }
+
+    .empty {
+        text-align: center;
+        padding: 5px;
     }
 }

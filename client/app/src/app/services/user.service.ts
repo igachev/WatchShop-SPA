@@ -6,6 +6,7 @@ import { tap } from 'rxjs/operators';
 import { Observable } from 'rxjs';
 import { IRegister } from '../interfaces/IRegister';
 import { ILogin } from '../interfaces/ILogin';
+import { IWatch } from '../interfaces/IWatch';
 
 @Injectable({
   providedIn: 'root'
@@ -60,6 +61,11 @@ export class UserService {
 
   getAdminStatus(): Observable<object> {
     return this.http.get<object>(`${this.url}/users/isAdmin`);
+  }
+
+  getCart(): Observable<IWatch[]> {
+    let userId = localStorage?.getItem('_id') || '';
+    return this.http.get<IWatch[]>(`${this.url}/users/${userId}/cart`)
   }
 
 }

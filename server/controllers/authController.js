@@ -35,8 +35,8 @@ router.get('/isAdmin', (req, res) => {
     res.status(200).json({ isAdmin });
   });
 
-router.get('/cart', authMiddleware.isAuthorized, async (req,res) => {
-const {userId} = req.body
+router.get('/:userId/cart', authMiddleware.isAuthorized, async (req,res) => {
+const userId = req.params.userId
 
 try {
     const cartItems = await authService.getAllCartProducts(userId);
