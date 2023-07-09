@@ -7,15 +7,18 @@ import { WatchesComponent } from './watches/watches.component';
 import { DetailsComponent } from './details/details.component';
 import { SearchProductComponent } from './search-product/search-product.component';
 import { NotFoundComponent } from './not-found/not-found.component';
+import { CartComponent } from './cart/cart.component';
 
 const routes: Routes = [
   {path:'',redirectTo:'/watches',pathMatch:'full'},
   {path:'login',component:LoginComponent},
   {path:'register',component:RegisterComponent},
+  {path:'cart',component:CartComponent},
   {path:'watches',component:WatchesComponent},
   {path:'watches/create', component:CreateProductComponent},
   {path:'watches/search', component:SearchProductComponent},
   {path:'watches/:watchId/details',component:DetailsComponent},
+  
   {path:'**',component:NotFoundComponent}
 ];
 

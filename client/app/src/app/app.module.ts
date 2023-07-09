@@ -20,6 +20,7 @@ import { SearchProductComponent } from './search-product/search-product.componen
 import { NotFoundComponent } from './not-found/not-found.component';
 import { RatingComponent } from './rating/rating.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { CartComponent } from './cart/cart.component';
 
 
 
@@ -39,6 +40,7 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
     SearchProductComponent,
     NotFoundComponent,
     RatingComponent,
+    CartComponent,
     
   ],
   imports: [
