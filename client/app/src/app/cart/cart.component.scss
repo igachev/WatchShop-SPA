@@ -1,0 +1,11 @@
+.container-fluid {
+    background-color: grey;
+    .main-row {
+        padding: 10px;
+        .card {
+            background-color: rgba(73, 72, 72, 0.863);
+            padding: 8px;
+            margin: 10px;
+        }
+    }
+}
