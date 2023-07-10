@@ -29,9 +29,17 @@ const watchSchema = new mongoose.Schema({
         type: Number,
         required:[true,'price is required']
     },
-    quantity: {
-        type:Number,
-        required:[true,'quantity is required']
+    strap: {
+        type:String,
+        required:[true,'strap is required']
+    },
+    glass: {
+        type:String,
+        required:[true,'glass is required']
+    },
+    waterResistance: {
+        type:String,
+        required:[true,'waterResistance is required']
     },
     rating: [
         {

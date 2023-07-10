@@ -13,8 +13,31 @@ const userSchema = new mongoose.Schema({
     },
     userBoughtHistory: [
         {
-            type: mongoose.Types.ObjectId,
-            ref:'Watch'
+            watchId: {
+                type: mongoose.Types.ObjectId,
+                ref:'Watch'
+            },
+            date: {
+                type: Date,
+                default: Date.now
+            },
+           
+            quantity: {
+                type: Number,
+                min: 1
+            },
+            totalSum: {
+                type: Number
+            },
+            name: {
+                type: String
+            },
+            phone: {
+                type: String
+            },
+            address: {
+                type: String
+            }
         }
     ],
     shopCart: [
