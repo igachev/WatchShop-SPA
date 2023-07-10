@@ -4,6 +4,7 @@ import { IWatch } from '../interfaces/IWatch';
 import { ToastService } from '../services/toast.service';
 import { HttpErrorResponse } from '@angular/common/http';
 import { Subscription } from 'rxjs';
+import { NgForm } from '@angular/forms';
 
 @Component({
   selector: 'app-cart',
@@ -15,6 +16,7 @@ cartItems: IWatch[] = [];
 message!: string;
 getCartSubscription!: Subscription;
 deleteCartItemSubscription!: Subscription;
+buyItemFromCart!: Subscription;
 
 constructor(private userService: UserService,
   private toastService: ToastService) { }
@@ -60,12 +62,46 @@ deleteCartItem(watchId:string): void {
 
 }
 
+buy(myForm:NgForm,watchId: string,price: number): void {
+const userId = localStorage.getItem('_id') || '';
+const {name,phone,address,quantity} = myForm.value;
+
+this.buyItemFromCart = this.userService
+.addToUserBoughtHistory(userId,watchId,quantity,price,name,phone,address)
+.subscribe({
+  next: () => {
+    this.message = 'Item Was Purchased'
+    this.toastService.showToast('success',this.message,true)
+    this.userService.deleteCartItem(userId,watchId).subscribe(() => {
+      this.getCart()
+    })
+  },
+  error: (err:HttpErrorResponse) => {
+    if (err.error instanceof ErrorEvent) {
+      // Client-side error occurred
+      this.message = 'An error occurred. Please try again later.';
+      this.toastService.showToast('error',this.message,true)
+    }
+    
+    else {
+      // Server-side error occurred
+      this.message = err.error.message || 'An unknown error occurred.';
+      this.toastService.showToast('error',this.message,true)
+      
+    }
+  }
+})
+}
+
 ngOnDestroy(): void {
   if(this.getCartSubscription) {
     this.getCartSubscription.unsubscribe()
   }
   if(this.deleteCartItemSubscription) {
     this.deleteCartItemSubscription.unsubscribe()
+  }
+  if(this.buyItemFromCart) {
+    this.buyItemFromCart.unsubscribe();
   }
 }
 

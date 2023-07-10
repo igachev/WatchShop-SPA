@@ -6,6 +6,8 @@ export interface IWatch {
     battery: string;
     mechanism: 'mechanical' | 'automatic' | 'quartz';
     price: number;
-    quantity: number;
+    strap: string;
+    glass: string;
+    waterResistance: string;
     rating?: object[];
 }

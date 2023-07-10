@@ -22,8 +22,8 @@ constructor(private watchService: WatchService,
 
 
   create(myForm:NgForm): void {
-    const {brand,model,image,battery,mechanism,price,quantity} = myForm.value
-    const data = {brand,model,image,battery,mechanism,price,quantity}
+    const {brand,model,image,battery,mechanism,price,strap,glass,waterResistance} = myForm.value
+    const data = {brand,model,image,battery,mechanism,price,strap,glass,waterResistance}
     this.subscription = this.watchService.create(data).subscribe({
       next: () => {
         myForm.reset();

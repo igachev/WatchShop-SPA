@@ -13,9 +13,11 @@
                   <p class="card-text">Battery: {{item.battery}}</p>
                   <p class="card-text">Mechanism: {{item.mechanism}}</p>
                   <p class="card-text">Price: {{item.price}}</p>
-                  <p class="card-text">In Stock: {{item.quantity}}</p>
+                  <p class="card-text">Strap: {{item.strap}}</p>
+                  <p class="card-text">Glass: {{item.glass}}</p>
+                  <p class="card-text">Water Resistance: {{item.waterResistance}}</p>
 
-                  <form method="post" #myForm="ngForm">
+                  <form method="post" #myForm="ngForm" (ngSubmit)="buy(myForm,item._id || '',item.price)">
                     <div class="mb-3 row">
                      <label for="name" class="col-sm-3 col-form-label">Name</label>
                      <div class="col-md-9 col-sm-8">
@@ -115,11 +117,11 @@
                      <button class="btn btn-primary col-md-4 col-sm-3">Buy</button>
                    </div>
 
-                   <div class="mb-3 row btn-row">
-                    <button (click)="deleteCartItem(item._id || '')" class="btn btn-danger col-md-4 col-sm-3">Remove From Cart</button>
-                  </div>
-
                     </form>
+
+                    <div class="mb-3 row btn-row">
+                      <button (click)="deleteCartItem(item._id || '')" class="btn btn-danger col-md-4 col-sm-3">Remove From Cart</button>
+                    </div>
 
                 </div>
               </div>
