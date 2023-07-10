@@ -68,4 +68,8 @@ export class UserService {
     return this.http.get<IWatch[]>(`${this.url}/users/${userId}/cart`)
   }
 
+  deleteCartItem(userId:string, watchId:string): Observable<string> {
+    return this.http.delete<string>(`${this.url}/users/${userId}/cart/${watchId}`)
+  }
+
 }

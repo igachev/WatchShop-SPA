@@ -108,13 +108,15 @@
             
                     </div>
                   </div>
-             
+                  
+                  <app-toast></app-toast>
+
                    <div class="mb-3 row btn-row">
                      <button class="btn btn-primary col-md-4 col-sm-3">Buy</button>
                    </div>
 
                    <div class="mb-3 row btn-row">
-                    <button class="btn btn-danger col-md-4 col-sm-3">Remove From Cart</button>
+                    <button (click)="deleteCartItem(item._id || '')" class="btn btn-danger col-md-4 col-sm-3">Remove From Cart</button>
                   </div>
 
                     </form>
