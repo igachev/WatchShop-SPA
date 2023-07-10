@@ -5,10 +5,10 @@ const {getErrorMessage}= require('../utils/errorMsg.js')
 const authMiddleware = require('../middlewares/authMiddleware.js')
 
 router.post('/create',authMiddleware.adminOnly, async (req,res) => {
-const {brand,model,image,battery,mechanism,price,quantity} = req.body;
+const {brand,model,image,battery,mechanism,price,strap,glass,waterResistance} = req.body;
 
     try {
-const result = await watchService.create(brand,model,image,battery,mechanism,price,quantity)
+const result = await watchService.create(brand,model,image,battery,mechanism,price,strap,glass,waterResistance)
 res.status(201).json(result)
     } catch (err) {
         res.status(400).json({message: getErrorMessage(err)})

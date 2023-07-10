@@ -58,4 +58,17 @@ router.delete('/:userId/cart/:watchId', authMiddleware.isAuthorized, async (req,
     }
 })
 
+router.post('/:userId/cart/:watchId', async (req,res) => {
+    const userId = req.params.userId
+    const watchId = req.params.watchId
+    const {quantity,price,name,phone,address} = req.body;
+
+    try {
+        const updatedUserBoughtHistory = await authService.addToUserBoughtHistory(userId,watchId,quantity,price,name,phone,address)
+        res.status(201).json(updatedUserBoughtHistory)
+    } catch (err) {
+        res.status(400).json({message: getErrorMessage(err)})
+    }
+})
+
 module.exports = router

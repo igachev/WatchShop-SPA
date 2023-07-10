@@ -1,9 +1,9 @@
 const Watch = require('../models/Watch.js')
 
 exports.create = async (brand,model,image,battery,mechanism,
-    price,quantity) => {
+    price,strap,glass,waterResistance) => {
 const watch = await Watch.create({brand,model,image,battery,mechanism,
-    price,quantity});
+    price,strap,glass,waterResistance});
     return watch;
 }
 

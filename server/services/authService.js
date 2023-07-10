@@ -74,3 +74,18 @@ exports.deleteWatchFromCart = async (userId,watchId) => {
    await User.findByIdAndUpdate(userId, { $pull: { shopCart: watchId } });
    return watchId
 }
+
+exports.addToUserBoughtHistory = async (userId,watchId,quantity,price,name,phone,address) => {
+let totalSum = Number(quantity) * Number(price);
+const updateUserBoughtHistory = await User.findOneAndUpdate(
+    { _id: userId },
+    { $push: { userBoughtHistory: { userId,watchId,quantity,totalSum,name,phone,address } } },
+    { new: true}
+)
+
+if(!updateUserBoughtHistory) {
+    throw new Error('Invalid User')
+}
+
+return updateUserBoughtHistory
+}
