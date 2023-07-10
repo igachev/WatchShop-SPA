@@ -43,6 +43,13 @@ exports.login = async (email,password) => {
 }
 
 exports.addToCart = async (_id,watchId) => {
+    const user = await User.findById(_id)
+    const existingWatch = user.shopCart.findIndex((watch) => watch._id == watchId)
+
+    if(existingWatch !== -1) {
+        throw new Error('watch has already been added to cart')
+    }
+
     const updatedUser = await User.findOneAndUpdate(
         { _id },
         { $push: { shopCart: watchId } },

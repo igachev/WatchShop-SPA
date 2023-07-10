@@ -13,7 +13,7 @@
         <p class="card-text">Price: {{watch.price}}</p>
         
          <p class="card-text"><a class="btn btn-success" [routerLink]="['/watches', watch._id,'details']">Details</a></p> 
-            <p *ngIf="(isLogged && !isAdmin)" class="card-text"><a class="btn btn-dark">Add To Cart</a></p>
+          
           
         
         <p *ngIf="(!isLogged && !isAdmin)" class="card-text"><small>You must be logged in to buy</small></p>
@@ -23,25 +23,11 @@
     
   </div>
 
-  <!--  <ul>
-    <li *ngFor="let item of watches | paginate: { itemsPerPage: 2, currentPage: p }"> ... </li>
-  </ul> -->
+  
              
   <pagination-controls class="pagination" (pageChange)="p = $event"></pagination-controls>
 
- <!--  <nav aria-label="Page navigation example">
-    <ul class="pagination justify-content-center">
-      <li class="page-item">
-        <a class="page-link" href="#">Previous</a>
-      </li>
-      <li class="page-item"><a class="page-link" href="#">1</a></li>
-      <li class="page-item"><a class="page-link" href="#">2</a></li>
-      <li class="page-item"><a class="page-link" href="#">3</a></li>
-      <li class="page-item">
-        <a class="page-link" href="#">Next</a>
-      </li>
-    </ul>
-  </nav> -->
+ 
   
 </div>
 </div>
