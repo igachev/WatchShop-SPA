@@ -92,7 +92,10 @@ return updateUserPurchaseHistory
 }
 
 exports.getPurchaseHistory = async (userId) => {
-    const user = await User.findById(userId)
+    const user = await User.findById(userId).populate({
+        path: 'userPurchaseHistory.watchId',
+        select: 'brand model'
+      });
     if(!user) {
         throw new Error('Invalid user')
     }
