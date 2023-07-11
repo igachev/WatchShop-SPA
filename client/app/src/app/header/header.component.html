@@ -27,6 +27,9 @@
                 <li *ngIf="(isLogged && !isAdmin)" class="nav-item">
                     <a routerLink="/cart" routerLinkActive="active" class="nav-link">Cart</a>
                 </li>
+                <li *ngIf="(isLogged && !isAdmin)" class="nav-item">
+                    <a routerLink="/purchaseHistory" routerLinkActive="active" class="nav-link">Purchase History</a>
+                </li>
                 <li *ngIf="isLogged" class="nav-item">
                     <a class="nav-link" (click)="logout()">Logout</a>
                 </li>

@@ -21,6 +21,7 @@ import { NotFoundComponent } from './not-found/not-found.component';
 import { RatingComponent } from './rating/rating.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { CartComponent } from './cart/cart.component';
+import { PurchaseHistoryComponent } from './purchase-history/purchase-history.component';
 
 
 
@@ -41,6 +42,7 @@ import { CartComponent } from './cart/cart.component';
     NotFoundComponent,
     RatingComponent,
     CartComponent,
+    PurchaseHistoryComponent,
     
   ],
   imports: [
