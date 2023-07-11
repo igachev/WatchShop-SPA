@@ -1,5 +1,9 @@
 export interface IPurchaseHistory {
-        watchId:string;
+        watchId:{
+                _id:string,
+                brand:string;
+                model:string
+        };
         quantity:number;
         totalSum:number;
         name:string;

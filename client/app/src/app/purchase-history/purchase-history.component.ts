@@ -19,7 +19,6 @@ purchaseHistoryItems: IPurchaseHistory[] = []
 
   getPurchaseHistory(): void {
     this.userService.getPurchaseHistory().subscribe((items) => {
-      console.log(items);
       this.purchaseHistoryItems = items;
     })
   }
