@@ -1,6 +1,8 @@
 <div class="container-fluid">
     <div *ngIf="cartItems.length > 0" class="row main-row d-flex justify-content-center align-items-center" >
 
+      <app-toast></app-toast>
+
         <div  *ngFor="let item of cartItems" class="card mb-3 text-light" style="max-width: 540px;">
             <div class="row g-0">
               <div class="col-md-4">
@@ -98,6 +100,7 @@
                       name="quantity" 
                       id="quantity"
                       #quantity="ngModel"
+                      min="1"
                       required>
             
                       <small *ngIf="
@@ -107,11 +110,19 @@
                       ">
                       Quantity is required
                       </small>
+
+                      <small *ngIf="
+                      quantity.errors &&
+                      quantity.errors['min'] &&
+                      quantity.touched
+                      ">
+                      Quantity must be larger than 0
+                      </small>
             
                     </div>
                   </div>
                   
-                  <app-toast></app-toast>
+                  
 
                    <div class="mb-3 row btn-row">
                      <button class="btn btn-primary col-md-4 col-sm-3">Buy</button>
@@ -131,6 +142,7 @@
           
 
     </div>
+    
 
     <div class="text-light empty" *ngIf="cartItems.length === 0">
       <h2>Your Cart Is Empty</h2>

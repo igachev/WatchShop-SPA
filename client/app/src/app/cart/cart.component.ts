@@ -67,7 +67,7 @@ const userId = localStorage.getItem('_id') || '';
 const {name,phone,address,quantity} = myForm.value;
 
 this.buyItemFromCart = this.userService
-.addToUserBoughtHistory(userId,watchId,quantity,price,name,phone,address)
+.addToUserPurchaseHistory(userId,watchId,quantity,price,name,phone,address)
 .subscribe({
   next: () => {
     this.message = 'Item Was Purchased'

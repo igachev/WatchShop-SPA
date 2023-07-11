@@ -11,11 +11,12 @@ const userSchema = new mongoose.Schema({
         type: String,
         required: [true,'password is required'],
     },
-    userBoughtHistory: [
+    userPurchaseHistory: [
         {
             watchId: {
                 type: mongoose.Types.ObjectId,
-                ref:'Watch'
+                ref:'Watch',
+                required:[true,'watchId is required']
             },
             date: {
                 type: Date,
@@ -24,19 +25,24 @@ const userSchema = new mongoose.Schema({
            
             quantity: {
                 type: Number,
-                min: 1
+                min: [1,'quantity must be larger than 0'],
+                required:[true,'quantity is required']
             },
             totalSum: {
-                type: Number
+                type: Number,
+                required:[true,'totalSum is required']
             },
             name: {
-                type: String
+                type: String,
+                required:[true,'name is required']
             },
             phone: {
-                type: String
+                type: String,
+                required:[true,'phone is required']
             },
             address: {
-                type: String
+                type: String,
+                required:[true,'address is required']
             }
         }
     ],

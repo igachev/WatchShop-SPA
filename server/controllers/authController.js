@@ -64,8 +64,8 @@ router.post('/:userId/cart/:watchId', async (req,res) => {
     const {quantity,price,name,phone,address} = req.body;
 
     try {
-        const updatedUserBoughtHistory = await authService.addToUserBoughtHistory(userId,watchId,quantity,price,name,phone,address)
-        res.status(201).json(updatedUserBoughtHistory)
+        const updatedUserPurchaseHistory = await authService.addToUserPurchaseHistory(userId,watchId,quantity,price,name,phone,address)
+        res.status(201).json(updatedUserPurchaseHistory)
     } catch (err) {
         res.status(400).json({message: getErrorMessage(err)})
     }

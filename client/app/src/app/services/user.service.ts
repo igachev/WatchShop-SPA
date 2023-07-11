@@ -72,7 +72,7 @@ export class UserService {
     return this.http.delete<string>(`${this.url}/users/${userId}/cart/${watchId}`)
   }
 
-  addToUserBoughtHistory(userId:string,watchId:string,
+  addToUserPurchaseHistory(userId:string,watchId:string,
     quantity:string,price:number,name:string,
     phone:string,address:string): Observable<IUser> {
     return this.http.post<IUser>(`${this.url}/users/${userId}/cart/${watchId}`, {userId,watchId,
