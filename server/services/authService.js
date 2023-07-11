@@ -90,3 +90,11 @@ if(!updateUserPurchaseHistory) {
 
 return updateUserPurchaseHistory
 }
+
+exports.getPurchaseHistory = async (userId) => {
+    const user = await User.findById(userId)
+    if(!user) {
+        throw new Error('Invalid user')
+    }
+    return user.userPurchaseHistory
+}
