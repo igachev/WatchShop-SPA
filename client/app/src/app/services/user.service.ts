@@ -7,6 +7,7 @@ import { Observable } from 'rxjs';
 import { IRegister } from '../interfaces/IRegister';
 import { ILogin } from '../interfaces/ILogin';
 import { IWatch } from '../interfaces/IWatch';
+import { IPurchaseHistory } from '../interfaces/IPurchaseHistory';
 
 @Injectable({
   providedIn: 'root'
@@ -77,6 +78,11 @@ export class UserService {
     phone:string,address:string): Observable<IUser> {
     return this.http.post<IUser>(`${this.url}/users/${userId}/cart/${watchId}`, {userId,watchId,
       quantity,price,name,phone,address});
+  }
+
+  getPurchaseHistory(): Observable<IPurchaseHistory[]> {
+    let userId = localStorage?.getItem('_id') || '';
+    return this.http.get<IPurchaseHistory[]>(`${this.url}/users/${userId}/purchaseHistory`)
   }
 
 }
