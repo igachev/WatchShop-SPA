@@ -85,4 +85,8 @@ export class UserService {
     return this.http.get<IPurchaseHistory[]>(`${this.url}/users/${userId}/purchaseHistory`)
   }
 
+  getAllPurchaseHistory(): Observable<IPurchaseHistory[]> {
+    return this.http.get<IPurchaseHistory[]>(`${this.url}/users/purchaseHistory`)
+  }
+
 }
