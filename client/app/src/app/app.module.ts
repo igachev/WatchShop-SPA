@@ -22,6 +22,7 @@ import { RatingComponent } from './rating/rating.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { CartComponent } from './cart/cart.component';
 import { PurchaseHistoryComponent } from './purchase-history/purchase-history.component';
+import { AllPurchaseHistoryComponent } from './all-purchase-history/all-purchase-history.component';
 
 
 
@@ -43,6 +44,7 @@ import { PurchaseHistoryComponent } from './purchase-history/purchase-history.co
     RatingComponent,
     CartComponent,
     PurchaseHistoryComponent,
+    AllPurchaseHistoryComponent,
     
   ],
   imports: [

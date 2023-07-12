@@ -9,6 +9,7 @@ import { SearchProductComponent } from './search-product/search-product.componen
 import { NotFoundComponent } from './not-found/not-found.component';
 import { CartComponent } from './cart/cart.component';
 import { PurchaseHistoryComponent } from './purchase-history/purchase-history.component';
+import { AllPurchaseHistoryComponent } from './all-purchase-history/all-purchase-history.component';
 
 const routes: Routes = [
   {path:'',redirectTo:'/watches',pathMatch:'full'},
@@ -16,6 +17,7 @@ const routes: Routes = [
   {path:'register',component:RegisterComponent},
   {path:'cart',component:CartComponent},
   {path:'purchaseHistory',component:PurchaseHistoryComponent},
+  {path:'allPurchaseHistory',component:AllPurchaseHistoryComponent},
   {path:'watches',component:WatchesComponent},
   {path:'watches/create', component:CreateProductComponent},
   {path:'watches/search', component:SearchProductComponent},
