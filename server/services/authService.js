@@ -101,3 +101,17 @@ exports.getPurchaseHistory = async (userId) => {
     }
     return user.userPurchaseHistory
 }
+
+exports.getAllPurchaseHistory = async () => {
+    const users = await User.find({}).populate({
+        path: 'userPurchaseHistory.watchId',
+        select: 'brand model'
+      });
+    
+      let allPurchaseHistory = [];
+      users.forEach(user => {
+        allPurchaseHistory = allPurchaseHistory.concat(user.userPurchaseHistory);
+      });
+    
+      return allPurchaseHistory;
+}

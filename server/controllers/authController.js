@@ -71,12 +71,21 @@ router.post('/:userId/cart/:watchId',authMiddleware.isAuthorized, async (req,res
     }
 })
 
-router.get('/:userId/purchaseHistory',async (req,res) => {
+router.get('/:userId/purchaseHistory', authMiddleware.isAuthorized,async (req,res) => {
     const userId = req.params.userId
 
     try {
         const purchaseHistory = await authService.getPurchaseHistory(userId)
         res.status(200).json(purchaseHistory)
+    } catch (err) {
+        res.status(400).json({message: getErrorMessage(err)})
+    }
+})
+
+router.get('/purchaseHistory', authMiddleware.adminOnly, async (req,res) => {
+    try {
+        const allPurchaseHistory = await authService.getAllPurchaseHistory()
+        res.status(200).json(allPurchaseHistory)
     } catch (err) {
         res.status(400).json({message: getErrorMessage(err)})
     }
