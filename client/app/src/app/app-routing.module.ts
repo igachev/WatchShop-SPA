@@ -11,14 +11,16 @@ import { CartComponent } from './cart/cart.component';
 import { PurchaseHistoryComponent } from './purchase-history/purchase-history.component';
 import { AllPurchaseHistoryComponent } from './all-purchase-history/all-purchase-history.component';
 import { adminAuthGuard } from './guards/admin-auth.guard';
+import { userAuthGuard } from './guards/user-auth.guard';
+import { guestAuthGuard } from './guards/guest-auth.guard';
 
 
 const routes: Routes = [
   {path:'',redirectTo:'/watches',pathMatch:'full'},
-  {path:'login',component:LoginComponent},
-  {path:'register',component:RegisterComponent},
-  {path:'cart',component:CartComponent},
-  {path:'purchaseHistory',component:PurchaseHistoryComponent},
+  {path:'login',component:LoginComponent,canActivate:[guestAuthGuard]},
+  {path:'register',component:RegisterComponent,canActivate:[guestAuthGuard]},
+  {path:'cart',component:CartComponent,canActivate:[userAuthGuard]},
+  {path:'purchaseHistory',component:PurchaseHistoryComponent,canActivate:[userAuthGuard]},
   {path:'allPurchaseHistory',component:AllPurchaseHistoryComponent,canActivate:[adminAuthGuard]},
   {path:'watches',component:WatchesComponent},
   {path:'watches/create', component:CreateProductComponent,canActivate:[adminAuthGuard]},
