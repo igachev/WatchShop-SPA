@@ -10,6 +10,8 @@ import { NotFoundComponent } from './not-found/not-found.component';
 import { CartComponent } from './cart/cart.component';
 import { PurchaseHistoryComponent } from './purchase-history/purchase-history.component';
 import { AllPurchaseHistoryComponent } from './all-purchase-history/all-purchase-history.component';
+import { adminAuthGuard } from './guards/admin-auth.guard';
+
 
 const routes: Routes = [
   {path:'',redirectTo:'/watches',pathMatch:'full'},
@@ -17,9 +19,9 @@ const routes: Routes = [
   {path:'register',component:RegisterComponent},
   {path:'cart',component:CartComponent},
   {path:'purchaseHistory',component:PurchaseHistoryComponent},
-  {path:'allPurchaseHistory',component:AllPurchaseHistoryComponent},
+  {path:'allPurchaseHistory',component:AllPurchaseHistoryComponent,canActivate:[adminAuthGuard]},
   {path:'watches',component:WatchesComponent},
-  {path:'watches/create', component:CreateProductComponent},
+  {path:'watches/create', component:CreateProductComponent,canActivate:[adminAuthGuard]},
   {path:'watches/search', component:SearchProductComponent},
   {path:'watches/:watchId/details',component:DetailsComponent},
   

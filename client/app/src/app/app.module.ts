@@ -58,7 +58,7 @@ import { AllPurchaseHistoryComponent } from './all-purchase-history/all-purchase
   ],
   providers: [
     { provide: HTTP_INTERCEPTORS, useClass: AuthInterceptor, multi: true },
-    {provide: HTTP_INTERCEPTORS, useClass: SpinnerInterceptor,multi: true}
+    {provide: HTTP_INTERCEPTORS, useClass: SpinnerInterceptor,multi: true},
   ],
   bootstrap: [AppComponent]
 })
