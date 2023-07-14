@@ -13,6 +13,7 @@ import { AllPurchaseHistoryComponent } from './all-purchase-history/all-purchase
 import { adminAuthGuard } from './guards/admin-auth.guard';
 import { userAuthGuard } from './guards/user-auth.guard';
 import { guestAuthGuard } from './guards/guest-auth.guard';
+import { AboutUsComponent } from './about-us/about-us.component';
 
 
 const routes: Routes = [
@@ -26,7 +27,7 @@ const routes: Routes = [
   {path:'watches/create', component:CreateProductComponent,canActivate:[adminAuthGuard]},
   {path:'watches/search', component:SearchProductComponent},
   {path:'watches/:watchId/details',component:DetailsComponent},
-  
+  {path:'about',component:AboutUsComponent},
   {path:'**',component:NotFoundComponent}
 ];
 

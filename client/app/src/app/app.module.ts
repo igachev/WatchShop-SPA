@@ -19,10 +19,11 @@ import { SpinnerInterceptor } from './spinner.interceptor';
 import { SearchProductComponent } from './search-product/search-product.component';
 import { NotFoundComponent } from './not-found/not-found.component';
 import { RatingComponent } from './rating/rating.component';
-import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { NgbCarouselModule, NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { CartComponent } from './cart/cart.component';
 import { PurchaseHistoryComponent } from './purchase-history/purchase-history.component';
 import { AllPurchaseHistoryComponent } from './all-purchase-history/all-purchase-history.component';
+import { AboutUsComponent } from './about-us/about-us.component';
 
 
 
@@ -45,6 +46,7 @@ import { AllPurchaseHistoryComponent } from './all-purchase-history/all-purchase
     CartComponent,
     PurchaseHistoryComponent,
     AllPurchaseHistoryComponent,
+    AboutUsComponent,
     
   ],
   imports: [
@@ -54,7 +56,8 @@ import { AllPurchaseHistoryComponent } from './all-purchase-history/all-purchase
     HttpClientModule,
     NgxPaginationModule,
     NgbModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    NgbCarouselModule
   ],
   providers: [
     { provide: HTTP_INTERCEPTORS, useClass: AuthInterceptor, multi: true },
