@@ -3,9 +3,32 @@
     <div class="row">
 
         <div class="col-md-12">
-            <form method="post">
+            <form #myForm="ngForm" (ngSubmit)="sendEmail(myForm)" method="post">
                 <label for="subscriptionEmail" class="col-form-label">Email:</label>
-                <input class="form-control" type="email" name="subscriptionEmail" id="subscriptionEmail" email>
+                <input
+                ngModel 
+                class="form-control"
+                type="email"
+                name="subscriptionEmail"
+                id="subscriptionEmail"
+                #subscriptionEmail="ngModel"
+                email
+                required>
+
+                <small class="validation" *ngIf="
+                subscriptionEmail.errors &&
+                subscriptionEmail.errors['required'] &&
+                subscriptionEmail.touched">
+                Subscription Email is required
+              </small>
+      
+              <small class="validation" *ngIf="
+              subscriptionEmail.errors &&
+              subscriptionEmail.errors['email'] &&
+              subscriptionEmail.touched">
+               Subscription Email is not valid
+              </small>
+
                 <div class="text-light form-text">Subscribe for our newsletter</div>
                 <button class="btn btn-primary">Subscribe</button>
             </form>
