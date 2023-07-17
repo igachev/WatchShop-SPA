@@ -5,7 +5,7 @@
       <app-toast></app-toast>
 <div class="card-group" >
   
-    <div class="card" *ngFor="let watch of watches  | paginate: { itemsPerPage: 2, currentPage: p }">
+    <div class="card" *ngFor="let watch of watches  | paginate: { itemsPerPage: 5, currentPage: p }">
       <img [src]="watch.image" class="card-img-top" alt="...">
       <div class="card-body">
         <p class="card-title">Brand: {{watch.brand}}</p>
