@@ -18,6 +18,7 @@ fdescribe('WatchesComponent', () => {
   let watchService: WatchService;
   let userService: UserService;
   let el: DebugElement;
+  let mockLocalStorage: { [key: string]: string } = {};
 
   beforeEach(() => {
     TestBed.configureTestingModule({
@@ -38,12 +39,30 @@ fdescribe('WatchesComponent', () => {
       ],
       imports: [HttpClientModule,NgxPaginationModule,RouterModule] 
     });
+
     watchService = TestBed.inject(WatchService)
     userService = TestBed.inject(UserService)
     fixture = TestBed.createComponent(WatchesComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
     el = fixture.debugElement;
+
+    mockLocalStorage = {};
+ spyOn(localStorage, 'getItem').and.callFake((key: string) => {
+    return mockLocalStorage[key] || null;
+  });
+
+  spyOn(localStorage, 'setItem').and.callFake((key: string, value: string) => {
+    mockLocalStorage[key] = value;
+  });
+
+  spyOn(localStorage, 'removeItem').and.callFake((key: string) => {
+    delete mockLocalStorage[key];
+  });
+
+  spyOn(localStorage, 'clear').and.callFake(() => {
+    mockLocalStorage = {};
+  });
   });
 
   it('should create', () => {
@@ -65,5 +84,24 @@ fdescribe('WatchesComponent', () => {
     expect(cardElements.length).toBe(5)
     expect(cardElements.length).not.toBe(6)
     expect(cardElements.length).not.toBe(-1)
+  })
+
+  it('guest user should see the message:You must be logged in to buy',() => {
+    component.watches = WATCHES
+    fixture.detectChanges()
+    const smallElements = fixture.debugElement.queryAll(By.css('small'))
+    const isLogged = userService.isLogged()
+    expect(isLogged).toBeFalse()
+    expect(smallElements[0].nativeElement.textContent).toBe('You must be logged in to buy')
+  })
+
+  it('logged in user should not see the message:You must be logged in to buy',() => {
+    component.watches = WATCHES
+    localStorage.setItem('accessToken','123')
+    fixture.detectChanges()
+    const smallElements = fixture.debugElement.queryAll(By.css('small'))
+    const isLogged = userService.isLogged()
+    expect(isLogged).toBeTrue()
+    expect(smallElements[0]).toBeUndefined()
   })
 });
