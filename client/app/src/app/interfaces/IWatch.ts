@@ -4,10 +4,14 @@ export interface IWatch {
     model: string;
     image: string;
     battery: string;
-    mechanism: 'mechanical' | 'automatic' | 'quartz';
+    mechanism: string; // Update the type to match the possible values
     price: number;
     strap: string;
     glass: string;
     waterResistance: string;
-    rating?: object[];
-}
+    rating?: {
+      userId: string;
+      userRating: number;
+      _id: string;
+    }[];
+  }
