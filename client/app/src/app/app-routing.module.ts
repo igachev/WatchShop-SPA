@@ -15,6 +15,7 @@ import { userAuthGuard } from './guards/user-auth.guard';
 import { guestAuthGuard } from './guards/guest-auth.guard';
 import { AboutUsComponent } from './about-us/about-us.component';
 import { ContactsComponent } from './contacts/contacts.component';
+import { EditWatchComponent } from './edit-watch/edit-watch.component';
 
 
 const routes: Routes = [
@@ -26,6 +27,7 @@ const routes: Routes = [
   {path:'allPurchaseHistory',component:AllPurchaseHistoryComponent,canActivate:[adminAuthGuard]},
   {path:'watches',component:WatchesComponent},
   {path:'watches/create', component:CreateProductComponent,canActivate:[adminAuthGuard]},
+  {path:'watches/:watchId/edit',component:EditWatchComponent,canActivate:[adminAuthGuard]},
   {path:'watches/search', component:SearchProductComponent},
   {path:'watches/:watchId/details',component:DetailsComponent},
   {path:'about',component:AboutUsComponent},

@@ -26,6 +26,7 @@ import { AllPurchaseHistoryComponent } from './all-purchase-history/all-purchase
 import { AboutUsComponent } from './about-us/about-us.component';
 import { ContactsComponent } from './contacts/contacts.component';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
+import { EditWatchComponent } from './edit-watch/edit-watch.component';
 
 
 
@@ -50,6 +51,7 @@ import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
     AllPurchaseHistoryComponent,
     AboutUsComponent,
     ContactsComponent,
+    EditWatchComponent,
     
   ],
   imports: [

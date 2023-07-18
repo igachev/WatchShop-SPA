@@ -19,7 +19,7 @@
                   <p *ngIf="(!isLogged && !isAdmin)" class="card-text">You must be logged in to buy</p>
 
                   <div *ngIf="isAdmin" class="owner-btns">
-                    <a class="btn btn-primary">Edit</a>
+                    <a class="btn btn-primary" [routerLink]="['/watches', watch._id,'edit']">Edit</a>
                     <a (click)="deleteOne()" class="btn btn-danger">Delete</a>
                   </div>
 
