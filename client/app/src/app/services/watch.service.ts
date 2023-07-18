@@ -29,6 +29,10 @@ url: string = environment.apiUrl;
     return this.http.delete<IWatch>(`${this.url}/watches/${watchId}`)
   }
 
+  editOne(watchId: string, data: IWatch): Observable<IWatch> {
+    return this.http.put<IWatch>(`${this.url}/watches/${watchId}`,data)
+  }
+
   addToCart(userId:string,watchId:string): Observable<IUser> {
     return this.http.post<IUser>(`${this.url}/watches/${watchId}`,{userId,watchId})
   }
