@@ -1,0 +1,16 @@
+.container-fluid {
+   
+    .row {
+        background-color: grey;
+        .location {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin: 10px 0;
+            iframe {
+                width: 80%;
+                height: 500px;
+            }
+        }
+    }
+}
