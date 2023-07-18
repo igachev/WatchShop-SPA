@@ -24,6 +24,7 @@ import { CartComponent } from './cart/cart.component';
 import { PurchaseHistoryComponent } from './purchase-history/purchase-history.component';
 import { AllPurchaseHistoryComponent } from './all-purchase-history/all-purchase-history.component';
 import { AboutUsComponent } from './about-us/about-us.component';
+import { ContactsComponent } from './contacts/contacts.component';
 
 
 
@@ -47,6 +48,7 @@ import { AboutUsComponent } from './about-us/about-us.component';
     PurchaseHistoryComponent,
     AllPurchaseHistoryComponent,
     AboutUsComponent,
+    ContactsComponent,
     
   ],
   imports: [
