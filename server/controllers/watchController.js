@@ -96,6 +96,17 @@ router.delete('/:watchId',authMiddleware.adminOnly, async (req,res) => {
     }
 })
 
+router.put('/:watchId',authMiddleware.adminOnly, async (req,res) => {
+    const watchId = req.params.watchId;
+    const {brand,model,image,battery,mechanism,price,strap,glass,waterResistance} = req.body;
+    const data = {brand,model,image,battery,mechanism,price,strap,glass,waterResistance}
 
+    try {
+        const updatedWatch = await watchService.editOne(watchId,data)
+        res.status(200).json(updatedWatch)
+    } catch (err) {
+        res.status(400).json({message: getErrorMessage(err)})
+    }
+})
 
 module.exports = router;

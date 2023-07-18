@@ -22,6 +22,11 @@ exports.deleteOne = async (watchId) => {
    return watch
 }
 
+exports.editOne = async (watchId,data) => {
+const watch = await Watch.findByIdAndUpdate(watchId,data,{runValidators:true})
+return watch
+}
+
 exports.searchByBrand = async (brand) => {
     let watches = Watch.find({})
 
