@@ -25,6 +25,7 @@ import { PurchaseHistoryComponent } from './purchase-history/purchase-history.co
 import { AllPurchaseHistoryComponent } from './all-purchase-history/all-purchase-history.component';
 import { AboutUsComponent } from './about-us/about-us.component';
 import { ContactsComponent } from './contacts/contacts.component';
+import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 
 
 
@@ -59,7 +60,8 @@ import { ContactsComponent } from './contacts/contacts.component';
     NgxPaginationModule,
     NgbModule,
     ReactiveFormsModule,
-    NgbCarouselModule
+    NgbCarouselModule,
+    FontAwesomeModule
   ],
   providers: [
     { provide: HTTP_INTERCEPTORS, useClass: AuthInterceptor, multi: true },
