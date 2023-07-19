@@ -1,21 +1,21 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { LoginComponent } from './login/login.component';
-import { RegisterComponent } from './register/register.component';
-import { CreateProductComponent } from './create-product/create-product.component';
-import { WatchesComponent } from './watches/watches.component';
-import { DetailsComponent } from './details/details.component';
-import { SearchProductComponent } from './search-product/search-product.component';
+import { LoginComponent } from './feature/user/login/login.component';
+import { RegisterComponent } from './feature/user/register/register.component';
+import { CreateProductComponent } from './feature/watch/create-product/create-product.component';
+import { WatchesComponent } from './feature/watch/watches/watches.component';
+import { DetailsComponent } from './feature/watch/details/details.component';
+import { SearchProductComponent } from './feature/watch/search-product/search-product.component';
 import { NotFoundComponent } from './not-found/not-found.component';
-import { CartComponent } from './cart/cart.component';
-import { PurchaseHistoryComponent } from './purchase-history/purchase-history.component';
-import { AllPurchaseHistoryComponent } from './all-purchase-history/all-purchase-history.component';
-import { adminAuthGuard } from './guards/admin-auth.guard';
-import { userAuthGuard } from './guards/user-auth.guard';
-import { guestAuthGuard } from './guards/guest-auth.guard';
+import { CartComponent } from './feature/user/cart/cart.component';
+import { PurchaseHistoryComponent } from './feature/user/purchase-history/purchase-history.component';
+import { AllPurchaseHistoryComponent } from './feature/user/all-purchase-history/all-purchase-history.component';
+import { adminAuthGuard } from './core/guards/admin-auth.guard';
+import { userAuthGuard } from './core/guards/user-auth.guard';
+import { guestAuthGuard } from './core/guards/guest-auth.guard';
 import { AboutUsComponent } from './about-us/about-us.component';
 import { ContactsComponent } from './contacts/contacts.component';
-import { EditWatchComponent } from './edit-watch/edit-watch.component';
+import { EditWatchComponent } from './feature/watch/edit-watch/edit-watch.component';
 
 
 const routes: Routes = [

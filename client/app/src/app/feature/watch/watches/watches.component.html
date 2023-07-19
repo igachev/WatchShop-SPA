@@ -1,0 +1,34 @@
+<app-spinner-bootstrap ></app-spinner-bootstrap>
+<div class="container-fluid">
+  <h2>All Products</h2>
+    <div class="row">
+     
+      <app-toast></app-toast>
+<div class="card-group" >
+  
+    <div class="card" *ngFor="let watch of watches  | paginate: { itemsPerPage: 5, currentPage: p }">
+      <img [src]="watch.image" class="card-img-top" alt="...">
+      <div class="card-body">
+        <p class="card-title">Brand: {{watch.brand}}</p>
+        <p class="card-title">Model: {{watch.model}}</p>
+        <p class="card-text">Price: {{watch.price  | currency: 'EUR'}}</p>
+        
+         <p class="card-text"><a class="btn btn-success" [routerLink]="['/watches', watch._id,'details']">Details</a></p> 
+          
+          
+        
+        <p *ngIf="(!isLogged && !isAdmin)" class="card-text"><small>You must be logged in to buy</small></p>
+      </div>
+    </div>
+   
+    
+  </div>
+
+  
+             
+  <pagination-controls class="pagination" (pageChange)="p = $event"></pagination-controls>
+
+ 
+  
+</div>
+</div>

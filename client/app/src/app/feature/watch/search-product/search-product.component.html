@@ -1,0 +1,60 @@
+<app-spinner-bootstrap ></app-spinner-bootstrap>
+<div class="container-fluid d-flex justify-content-center align-items-center">
+    
+    <div class="row ">
+        <div class="col-auto">
+            <h2>Search By Brand</h2>
+        </div>
+    </div>
+
+        <div class="row">
+            <form method="post" #myForm="ngForm" (ngSubmit)="search(myForm)">
+                <div class="row g-3 align-items-center">
+                    <div class="col-auto">
+                      <label for="searchValue" class="col-form-label">Search</label>
+                    </div>
+                    <div class="col-auto">
+                      <input
+                      ngModel
+                      type="text"
+                      name="searchValue"
+                      id="searchValue"
+                      class="form-control"
+                      #searchValue="ngModel"
+                      required
+                      placeholder="e.g. casio"   
+                          >
+                    </div>
+                  </div>
+    
+                  <div class="row g-3 align-items-center">
+                <button class="btn btn-primary col-md-8">Search</button> 
+                  </div>
+
+            </form>
+        </div>
+    
+        <div class="row">
+
+            <div *ngIf="watches.length === 0" class="col-auto">
+                <h5>No results found!</h5>
+            </div>
+
+            <div class="card-group">
+                <div class="card" *ngFor="let watch of watches">
+                    <img [src]="watch.image" class="card-img-top" alt="...">
+      <div class="card-body">
+        <p class="card-title">Brand: {{watch.brand}}</p>
+        <p class="card-title">Model: {{watch.model}}</p>
+        <p class="card-text">Price: {{watch.price | currency: 'EUR'}}</p>
+        
+         <p class="card-text"><a class="btn btn-success" [routerLink]="['/watches', watch._id,'details']">Details</a></p> 
+          
+        
+        <p *ngIf="(!isLogged && !isAdmin)" class="card-text"><small>You must be logged in to buy</small></p>
+      </div>
+                </div>
+            </div>
+        </div>
+
+</div>

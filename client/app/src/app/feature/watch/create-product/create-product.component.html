@@ -1,0 +1,155 @@
+<app-spinner-bootstrap ></app-spinner-bootstrap>
+<div class="container-md-12">
+    
+    <form #myForm="ngForm" (ngSubmit)="create(myForm)" method="post">
+        <div class="row mb-3">
+            <div class="col-md-6">
+        <div class="form-group">
+          <label for="brand">Brand</label>
+          <input
+           type="text"
+            class="form-control"
+             id="brand"
+              name="brand"
+              ngModel
+              #brand="ngModel">
+        </div>
+    </div>
+    </div>
+
+    <div class="row mb-3">
+    <div class="col-md-6">
+        <div class="form-group">
+          <label for="model">Model</label>
+          <input type="text"
+           class="form-control"
+            id="model"
+             name="model"
+             ngModel
+             #model="ngModel">
+        </div>
+    </div>
+</div>
+        
+<div class="row mb-3">
+    <div class="col-md-6">
+        <div class="form-group">
+          <label for="image">Image Link</label>
+          <input 
+          type="text"
+           class="form-control"
+            id="image"
+             name="image"
+             ngModel
+             #image="ngModel">
+        </div>
+    </div>
+</div>
+
+<div class="row mb-3">
+    <div class="col-md-6">
+        <div class="form-group">
+          <label for="battery">Battery</label>
+          <input 
+          type="text"
+           class="form-control"
+            id="battery"
+             name="battery"
+             ngModel
+             #battery="ngModel">
+        </div>
+    </div>
+</div>
+
+<div class="row mb-3">
+<div class="col-md-6">
+    <div class="form-group">
+        <label for="mechanism">Mechanism</label>
+        <select 
+        class="form-select"
+         name="mechanism"
+          id="mechanism"
+          ngModel
+          #mechanism="ngModel">
+            <option value="" disabled selected></option>
+            <option value="mechanical">mechanical</option>
+            <option value="automatic">automatic</option>
+            <option value="quartz">quartz</option>
+        </select>
+    </div>
+</div>
+</div>
+
+    
+<app-toast></app-toast> 
+    
+ 
+<div class="row mb-3">
+    <div class="col-md-6">
+        <div class="form-group">
+          <label for="price">Price</label>
+          <input 
+          type="number"
+           class="form-control"
+            id="price"
+             name="price"
+             ngModel
+             #price="ngModel">
+        </div>
+    </div>
+</div>
+
+<div class="row mb-3">
+    <div class="col-md-6">
+        <div class="form-group">
+          <label for="strap">Strap</label>
+          <input
+           type="text"
+            class="form-control"
+             id="strap"
+              name="strap"
+              ngModel
+              #strap="ngModel">
+        </div>
+    </div>
+</div>
+        
+<div class="row mb-3">
+    <div class="col-md-6">
+        <div class="form-group">
+          <label for="glass">Glass</label>
+          <input
+           type="text"
+            class="form-control"
+             id="glass"
+              name="glass"
+              ngModel
+              #glass="ngModel">
+        </div>
+    </div>
+</div>
+  
+<div class="row mb-3">
+    <div class="col-md-6">
+        <div class="form-group">
+          <label for="waterResistance">Water Resistance</label>
+          <input
+           type="text"
+            class="form-control"
+             id="waterResistance"
+              name="waterResistance"
+              ngModel
+              #waterResistance="ngModel">
+        </div>
+    </div>
+</div>
+
+
+<button class="btn btn-success">Submit</button>
+
+    
+    
+      </form>
+       
+</div>
+

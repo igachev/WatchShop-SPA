@@ -1,0 +1,87 @@
+<app-spinner-bootstrap ></app-spinner-bootstrap>
+<div class="container-md-12 d-flex justify-content-center align-items-center">
+    <form #myForm="ngForm" (ngSubmit)="register(myForm)">
+       <div class="mb-3 row">
+        <label for="email" class="col-sm-3 col-form-label">Email</label>
+        <div class="col-md-9 col-sm-8">
+            <input
+            ngModel 
+            type="email" 
+            class="form-control " 
+            name="email" 
+            id="email"
+            #email="ngModel" 
+            required
+            email>
+
+          <small *ngIf="
+          email.errors &&
+          email.errors['required'] &&
+          email.touched">
+          Email is required
+        </small>
+
+        <small *ngIf="
+          email.errors &&
+          email.errors['email'] &&
+          email.touched">
+          Email is not valid
+        </small>
+
+        </div>
+       </div>
+
+       <div class="mb-3 row">
+        <label for="password" class="col-sm-3 col-form-label">Password</label>
+        <div class="col-md-9 col-sm-8">
+          <input
+          ngModel
+          type="password" 
+          class="form-control" 
+          name="password" 
+          id="password"
+          #password="ngModel"
+          required>
+
+          <small *ngIf="
+          password.errors &&
+          password.errors['required'] &&
+          password.touched
+          ">
+          Password is required
+          </small>
+
+        </div>
+      </div>
+
+      <div class="mb-3 row">
+        <label for="repeatPassword" class="col-sm-3 col-form-label">Repeat Password</label>
+        <div class="col-md-9 col-sm-8">
+          <input
+          ngModel 
+          type="password" 
+          class="form-control" 
+          name="repeatPassword" 
+          id="repeatPassword"
+          #repeatPassword="ngModel" 
+          required>
+
+          <small *ngIf="
+          repeatPassword.errors &&
+          repeatPassword.errors['required'] &&
+          repeatPassword.touched
+          ">
+         Repeat Password is required
+          </small>
+
+        </div>
+      </div>
+
+      <div class="mb-3 row btn-row">
+        <button class="btn btn-primary col-md-4 col-sm-3">Register</button>
+      </div>
+
+      <app-toast></app-toast>
+
+    </form>
+</div>

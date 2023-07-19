@@ -1,0 +1,37 @@
+<app-spinner-bootstrap ></app-spinner-bootstrap>
+<div class="container-fluid bg-secondary">
+    <div class="row">
+
+      <div class="empty-cart text-white" *ngIf="purchaseHistoryItems.length === 0">
+        <h3>You haven't bought anything yet</h3>
+      </div>
+
+        <div class="table-responsive" *ngIf="purchaseHistoryItems.length > 0">
+            <table class="table table-dark table-bordered">
+                <thead>
+                  <tr>
+                    <th scope="col">order №</th>
+                    <th scope="col">Brand</th>
+                    <th scope="col">Model</th>
+                    <th scope="col">quantity</th>
+                    <th scope="col">date</th>
+                    <th scope="col">totalSum</th>
+                  </tr>
+                </thead>
+                <tbody>
+    
+                  <tr *ngFor="let item of purchaseHistoryItems">
+                    <th >{{item._id}}</th>
+                    <td>{{item.watchId.brand}}</td>
+                    <td>{{item.watchId.model}}</td>
+                    <td>{{item.quantity}}</td>
+                    <td>{{item.date | date: 'dd-MM-yyyy'}}</td>
+                    <td>{{item.totalSum | currency: 'EUR'}}</td>
+                  </tr>
+                 
+                </tbody>
+              </table>
+        </div>
+
+    </div>
+</div>
