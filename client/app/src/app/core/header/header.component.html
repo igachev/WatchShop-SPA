@@ -34,7 +34,7 @@
                     <a routerLink="/allPurchaseHistory" routerLinkActive="active" class="nav-link">All Purchase History</a>
                 </li>
                 <li *ngIf="isLogged" class="nav-item">
-                    <a class="nav-link" (click)="logout()">Logout</a>
+                    <a class="nav-link logout-btn" (click)="logout()">Logout</a>
                 </li>
                 <li *ngIf="isAdmin" class="nav-item">
                     <a class="nav-link" routerLink="/watches/create" routerLinkActive="active">Create Product</a>

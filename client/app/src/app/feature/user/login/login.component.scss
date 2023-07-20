@@ -1,7 +1,17 @@
+.page-title {
+    background-color: grey;
+    text-align: center;
+    padding-top: 10px;
+    h2 {
+    padding: 0;
+    margin: 0;
+    }
+}
 .container-md-12 {
     height: 700px;
     background-color: grey;
     color: #fff;
+    
     .row {
         small {
             color: rgba(150, 23, 23, 0.89);

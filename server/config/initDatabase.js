@@ -3,7 +3,8 @@ require("dotenv").config();
 
 async function setupDatabase() {
     mongoose.set('strictQuery',false)
-    await mongoose.connect('mongodb://127.0.0.1:27017/watchShop')
+    await mongoose.connect(process.env.DATABASE_DEVELOPMENT)
+    // await mongoose.connect(process.env.DATABASE_PRODUCTION)
     console.log('db connected');
 }
 

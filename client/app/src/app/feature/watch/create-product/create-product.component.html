@@ -12,7 +12,16 @@
              id="brand"
               name="brand"
               ngModel
-              #brand="ngModel">
+              #brand="ngModel"
+              required>
+
+              <small *ngIf="
+              brand.errors &&
+              brand.errors['required'] &&
+              brand.touched">
+              Brand is required
+            </small>
+
         </div>
     </div>
     </div>
@@ -26,7 +35,16 @@
             id="model"
              name="model"
              ngModel
-             #model="ngModel">
+             #model="ngModel"
+             required>
+
+             <small *ngIf="
+             model.errors &&
+             model.errors['required'] &&
+             model.touched">
+             Model is required
+           </small>
+
         </div>
     </div>
 </div>
@@ -41,7 +59,16 @@
             id="image"
              name="image"
              ngModel
-             #image="ngModel">
+             #image="ngModel"
+             required>
+
+             <small *ngIf="
+             image.errors &&
+             image.errors['required'] &&
+             image.touched">
+             Image is required
+           </small>
+
         </div>
     </div>
 </div>
@@ -56,7 +83,16 @@
             id="battery"
              name="battery"
              ngModel
-             #battery="ngModel">
+             #battery="ngModel"
+             required>
+
+             <small *ngIf="
+             battery.errors &&
+             battery.errors['required'] &&
+             battery.touched">
+             Battery is required
+           </small>
+
         </div>
     </div>
 </div>
@@ -70,12 +106,21 @@
          name="mechanism"
           id="mechanism"
           ngModel
-          #mechanism="ngModel">
+          #mechanism="ngModel"
+          required>
             <option value="" disabled selected></option>
             <option value="mechanical">mechanical</option>
             <option value="automatic">automatic</option>
             <option value="quartz">quartz</option>
         </select>
+
+        <small *ngIf="
+          mechanism.errors &&
+          mechanism.errors['required'] &&
+          mechanism.touched">
+          Mechanism is required
+        </small>
+
     </div>
 </div>
 </div>
@@ -94,7 +139,16 @@
             id="price"
              name="price"
              ngModel
-             #price="ngModel">
+             #price="ngModel"
+             required>
+
+             <small *ngIf="
+             price.errors &&
+             price.errors['required'] &&
+             price.touched">
+             Price is required
+           </small>
+
         </div>
     </div>
 </div>
@@ -109,7 +163,16 @@
              id="strap"
               name="strap"
               ngModel
-              #strap="ngModel">
+              #strap="ngModel"
+              required>
+
+              <small *ngIf="
+              strap.errors &&
+              strap.errors['required'] &&
+              strap.touched">
+              Strap is required
+            </small>
+
         </div>
     </div>
 </div>
@@ -124,7 +187,16 @@
              id="glass"
               name="glass"
               ngModel
-              #glass="ngModel">
+              #glass="ngModel"
+              required>
+
+              <small *ngIf="
+              glass.errors &&
+              glass.errors['required'] &&
+              glass.touched">
+              Glass is required
+            </small>
+
         </div>
     </div>
 </div>
@@ -139,7 +211,16 @@
              id="waterResistance"
               name="waterResistance"
               ngModel
-              #waterResistance="ngModel">
+              #waterResistance="ngModel"
+              required>
+
+              <small *ngIf="
+              waterResistance.errors &&
+              waterResistance.errors['required'] &&
+              waterResistance.touched">
+              Water Resistance is required
+            </small>
+
         </div>
     </div>
 </div>
