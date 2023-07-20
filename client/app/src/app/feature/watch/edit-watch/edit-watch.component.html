@@ -13,7 +13,16 @@
               name="brand"
               [(ngModel)]="brandValue"
               ngModel
-              #brand="ngModel">
+              #brand="ngModel"
+              required>
+
+              <small *ngIf="
+              brand.errors &&
+              brand.errors['required'] &&
+              brand.touched">
+              Brand is required
+            </small>
+
         </div>
     </div>
     </div>
@@ -28,7 +37,16 @@
              name="model"
              [(ngModel)]="modelValue"
              ngModel
-             #model="ngModel">
+             #model="ngModel"
+             required>
+
+             <small *ngIf="
+             model.errors &&
+             model.errors['required'] &&
+             model.touched">
+             Model is required
+           </small>
+
         </div>
     </div>
 </div>
@@ -44,7 +62,16 @@
              name="image"
              [(ngModel)]="imageValue"
              ngModel
-             #image="ngModel">
+             #image="ngModel"
+             required>
+
+             <small *ngIf="
+             image.errors &&
+             image.errors['required'] &&
+             image.touched">
+             Image is required
+           </small>
+
         </div>
     </div>
 </div>
@@ -60,7 +87,16 @@
              name="battery"
              [(ngModel)]="batteryValue"
              ngModel
-             #battery="ngModel">
+             #battery="ngModel"
+             required>
+
+             <small *ngIf="
+             battery.errors &&
+             battery.errors['required'] &&
+             battery.touched">
+             Battery is required
+           </small>
+
         </div>
     </div>
 </div>
@@ -75,12 +111,21 @@
           id="mechanism"
           [(ngModel)]="mechanismValue"
           ngModel
-          #mechanism="ngModel">
+          #mechanism="ngModel"
+          required>
             <option value="" disabled selected></option>
             <option value="mechanical">mechanical</option>
             <option value="automatic">automatic</option>
             <option value="quartz">quartz</option>
         </select>
+
+        <small *ngIf="
+        mechanism.errors &&
+        mechanism.errors['required'] &&
+        mechanism.touched">
+        Mechanism is required
+      </small>
+
     </div>
 </div>
 </div>
@@ -100,7 +145,16 @@
              name="price"
              [(ngModel)]="priceValue"
              ngModel
-             #price="ngModel">
+             #price="ngModel"
+             required>
+
+             <small *ngIf="
+             price.errors &&
+             price.errors['required'] &&
+             price.touched">
+             Price is required
+           </small>
+
         </div>
     </div>
 </div>
@@ -116,7 +170,16 @@
               name="strap"
               [(ngModel)]="strapValue"
               ngModel
-              #strap="ngModel">
+              #strap="ngModel"
+              required>
+
+              <small *ngIf="
+              strap.errors &&
+              strap.errors['required'] &&
+              strap.touched">
+              Strap is required
+            </small>
+
         </div>
     </div>
 </div>
@@ -132,7 +195,16 @@
               name="glass"
               [(ngModel)]="glassValue"
               ngModel
-              #glass="ngModel">
+              #glass="ngModel"
+              required>
+
+              <small *ngIf="
+              glass.errors &&
+              glass.errors['required'] &&
+              glass.touched">
+              Glass is required
+            </small>
+
         </div>
     </div>
 </div>
@@ -148,7 +220,16 @@
               name="waterResistance"
               [(ngModel)]="waterResistanceValue"
               ngModel
-              #waterResistance="ngModel">
+              #waterResistance="ngModel"
+              required>
+
+              <small *ngIf="
+              waterResistance.errors &&
+              waterResistance.errors['required'] &&
+              waterResistance.touched">
+              Water Resistance is required
+            </small>
+
         </div>
     </div>
 </div>
