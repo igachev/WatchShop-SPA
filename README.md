@@ -83,7 +83,7 @@ The server listens on port 5000 by default. Here are the endpoints:
 - `GET /users/isAdmin` : Check if user is admin or not
 - `GET /users/:userId/cart` : Get all watches which the user added to his cart
 - `DELETE /users/:userId/cart/:watchId` : Remove a watch from the user's cart
-- `POST /users/:userId/cart/:watchId` : Add a watch to the user's cart
+- `POST /users/:userId/cart/:watchId` : Buy a watch from the user's cart
 - `GET /users/:userId/purchaseHistory` : Display all bought watches by the user
 - `GET /users/purchaseHistory` : Display all bought watches from the website to the admin only
 - `POST /watches/create` : Add new watch to the catalog
