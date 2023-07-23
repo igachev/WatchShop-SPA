@@ -1,10 +1,19 @@
 # WatchShop-SPA
 
+
+### This is an online store  specialized in  selling watches
+
+
 ## Link to WatchShop Website: https://watch-shop-spa.onrender.com
+
 
 ## Link to WatchShop API: https://watch-shop-api.onrender.com/watches
 
-### Backend documentation for WatchShop API:
+
+In this file I will provide documentation for backend and frontend
+
+
+# Backend documentation for WatchShop API:
 
  This is a backend application built with Node.js and Express.
  
@@ -104,3 +113,32 @@ The server listens on port 5000 by default. Here are the endpoints:
 - `controllers` : Used for creating the endpoints,handle requests and responses
 - `services` : Handle database model operations
 - `index.js` : Entry point of the application
+
+
+# Frontend documentation for WatchShop
+
+This is a single page application built with Angular
+
+### Requirements:
+- @angular/animations
+- @angular/common
+- @angular/compiler
+- @angular/core
+- @angular/forms
+- @angular/platform-browser
+- @angular/platform-browser-dynamic
+- @angular/router
+- @fortawesome/angular-fontawesome
+- @fortawesome/fontawesome-svg-core
+- @fortawesome/free-brands-svg-icons
+- @fortawesome/free-regular-svg-icons
+- @fortawesome/free-solid-svg-icons
+- @ng-bootstrap/ng-bootstrap
+- @popperjs/core
+- bootstrap
+- ngx-pagination
+- rxjs
+- tslib
+- zone.js
+
+
