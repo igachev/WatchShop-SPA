@@ -97,3 +97,10 @@ The server listens on port 5000 by default. Here are the endpoints:
 - `POST /watches/:watchId/rating` : Rate a specific watch by id with a rating value from 1 to 5
 - `GET /watches/:watchId/rating` : Get the current rating of a specific watch
 - `POST /subscription` : Send an email using nodemailer to an user's given email
+
+
+### Folder Structure:
+- `models` : Contains the database models
+- `controllers` : Used for creating the endpoints,handle requests and responses
+- `services` : Handle database model operations
+- `index.js` : Entry point of the application
