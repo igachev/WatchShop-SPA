@@ -148,3 +148,10 @@ This is a single page application built with Angular,TypeScript,Bootstrap
 9. Go to folder src: `cd src`
 10. Go to folder app: `cd app`
 11. Start the application: `ng s --open`
+
+
+### Folder Structure:
+- `core` : It contains static components, services, functional guards
+- `shared` : It contains reusable components, interfaces
+- `feature` : Contains all distinct modules.The components of each module share  related functionality.We have two modules: user, watch.
+- `app.module` : Entry point of the application
