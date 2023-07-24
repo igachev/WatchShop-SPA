@@ -1,7 +1,7 @@
 # WatchShop-SPA
 
 
-### This is an online store  specialized in  selling watches
+<strong>This is an online store  specialized in  selling watches</strong>
 
 
 ## Link to WatchShop Website: https://watch-shop-spa.onrender.com
@@ -34,11 +34,8 @@ In this file I will provide documentation for backend and frontend
 ### Installation:
 
 1. Clone this repository: `git clone https://github.com/igachev/WatchShop-SPA.git`
-
-2. Install dependencies: `npm install`
- 
-3. Go to folder server: `cd server`
-
+2. Go to folder server: `cd server`
+3. Install dependencies: `npm install`
 4. Start the server: `npm start`
 
 
@@ -58,7 +55,7 @@ SUBSCRIPTION_EMAIL =
 
 SUBSCRIPTION_EMAIL_PASSWORD = 
 
-Example with information about each variable:
+<strong>Example values of each variable(Keep in mind these are just example values and you must add your own values):</strong>
 
 
 DATABASE_DEVELOPMENT='mongodb://127.0.0.1:27017/watchShop' // local database
@@ -70,7 +67,7 @@ DATABASE_PRODUCTION=  // provide a link for MongoDB Atlas Database
 JWT_SECRET=my-secret-123 // provide a secret for JsonWebToken
 
 
-ADMIN_EMAIL=adminW@abv.bg // You must register in the website with this email in order to be able to login as admin
+ADMIN_EMAIL=adminW@abv.bg // You must register in the website with the email you type here in order to be able to login as admin
 
 
 ![01 registerAsAdmin](https://github.com/igachev/WatchShop-SPA/assets/102420254/a4b61b5b-47ed-4639-bb91-49288974c168)
@@ -117,7 +114,7 @@ The server listens on port 5000 by default. Here are the endpoints:
 
 # Frontend documentation for WatchShop
 
-This is a single page application built with Angular
+This is a single page application built with Angular,TypeScript,Bootstrap
 
 ### Requirements:
 - @angular/animations
@@ -142,3 +139,12 @@ This is a single page application built with Angular
 - zone.js
 
 
+### Installation:
+
+5. Make sure you completed the above mentioned backend installation
+6. Go to folder client: `cd client`
+7. Go to folder app: `cd app`
+8. Install dependencies: `npm install`
+9. Go to folder src: `cd src`
+10. Go to folder app: `cd app`
+11. Start the application: `ng s --open`
