@@ -155,3 +155,25 @@ This is a single page application built with Angular,TypeScript,Bootstrap
 - `shared` : It contains reusable components, interfaces
 - `feature` : Contains all distinct modules.The components of each module share  related functionality.We have two modules: user, watch.
 - `app.module` : Entry point of the application
+
+
+### Routes:
+
+
+Here are the available routes:
+
+
+- `/` : homepage which redirects to `/watches`
+- `/login` : display login page
+- `/register` : display register page
+- `/cart` : display user's cart page
+- `/purchaseHistory` : display user's purchase history
+- `/allPurchaseHistory` : display all bought products by users (only the owner of the shop can see this)
+- `/watches` : display the watch catalog
+- `/watches/create` : the owner can add new watch to his catalog
+- `/watches/:watchId/edit` : the owner can edit watch details
+- `/watches/search` : Display only watches by the searched brand
+- `/watches/:watchId/details` : Display a specific watch
+- `/about` : display about us page
+- `/contacts` : display contacts page
+- `any invalid route` : display page not found
