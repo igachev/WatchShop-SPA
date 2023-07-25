@@ -4,6 +4,9 @@
 <strong>This is an online store  specialized in  selling watches</strong>
 
 
+### Initial loading of website might take up to 1 minute because it is a free tier
+
+
 ## Link to WatchShop Website: https://watch-shop-spa.onrender.com
 
 
@@ -240,6 +243,14 @@ Admin Navigation Menu
 
 
 <p align="center">
+ Toggle button for small screens
+
+ ![22 toggleBtn](https://github.com/igachev/WatchShop-SPA/assets/102420254/2cd06233-d503-4f4f-8d17-f90dce4077a7)
+
+</p>
+
+
+<p align="center">
  Login Form Validation
 
  ![05 loginFormValidation](https://github.com/igachev/WatchShop-SPA/assets/102420254/a7ee3af9-6bdf-44ad-8481-2dcaa842e6ac)
@@ -299,5 +310,37 @@ Admin Navigation Menu
  Only Logged In User can rate watches from 1 to 5 stars by clicking on a star
 
  ![16 rate](https://github.com/igachev/WatchShop-SPA/assets/102420254/55fabc46-cad2-4e10-9b1a-d16ecf1c2866)
+
+</p>
+
+
+<p align="center">
+ User's Cart
+
+ ![17 userCart](https://github.com/igachev/WatchShop-SPA/assets/102420254/30388255-1d0e-471a-9d63-f919f433c2e1)
+
+</p>
+
+
+<p align="center">
+ User Purhase History
+
+ ![18 userPurchaseHistory](https://github.com/igachev/WatchShop-SPA/assets/102420254/a7cd8320-5625-401f-b8a4-5ba12d8780bf)
+
+</p>
+
+
+<p align="center">
+ Admin is able to see all purchases 
+
+ ![19 adminHistory](https://github.com/igachev/WatchShop-SPA/assets/102420254/37eca414-0c1e-45c5-b958-3616eda5b901)
+
+</p>
+
+
+<p align="center">
+ Everyone can subscribe for the newsletter by providing his email address and click Subscribe
+
+ ![20 subscription](https://github.com/igachev/WatchShop-SPA/assets/102420254/e7ab0295-954e-4e93-8f00-8344230b4de2)
 
 </p>
