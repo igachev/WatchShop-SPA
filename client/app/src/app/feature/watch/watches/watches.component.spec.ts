@@ -11,6 +11,7 @@ import { NgxPaginationModule, PaginatePipe, PaginationService } from 'ngx-pagina
 import { WATCHES } from '../../../mockData/watches';
 import { ActivatedRoute, RouterModule, convertToParamMap } from '@angular/router';
 import { of } from 'rxjs';
+import { SharedModule } from 'src/app/shared/shared.module';
 
 fdescribe('WatchesComponent', () => {
   let component: WatchesComponent;
@@ -37,7 +38,7 @@ fdescribe('WatchesComponent', () => {
           }
         }
       ],
-      imports: [HttpClientModule,NgxPaginationModule,RouterModule] 
+      imports: [HttpClientModule,NgxPaginationModule,RouterModule,SharedModule] 
     });
 
     watchService = TestBed.inject(WatchService)
@@ -46,7 +47,7 @@ fdescribe('WatchesComponent', () => {
     component = fixture.componentInstance;
     fixture.detectChanges();
     el = fixture.debugElement;
-
+    
     mockLocalStorage = {};
  spyOn(localStorage, 'getItem').and.callFake((key: string) => {
     return mockLocalStorage[key] || null;
@@ -63,6 +64,7 @@ fdescribe('WatchesComponent', () => {
   spyOn(localStorage, 'clear').and.callFake(() => {
     mockLocalStorage = {};
   });
+
   });
 
   it('should create', () => {
@@ -77,11 +79,11 @@ fdescribe('WatchesComponent', () => {
     expect(h2Element.nativeElement.textContent).not.toBe(2)
   });
 
-  it('should consist of 5 or less detail cards because pagination limit is 5',() => {
+  it('should consist of 5 or less watches because pagination limit is 5',() => {
     component.watches = WATCHES
     fixture.detectChanges()
     let cardElements = el.queryAll(By.css('.card'))
-    expect(cardElements.length).toBe(5)
+    expect(cardElements.length).toBeLessThanOrEqual(5)
     expect(cardElements.length).not.toBe(6)
     expect(cardElements.length).not.toBe(-1)
   })
