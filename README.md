@@ -10,7 +10,22 @@
 ## Link to WatchShop API: https://watch-shop-api.onrender.com/watches
 
 
-In this file I will provide documentation for backend and frontend
+## Test Accounts:
+
+`Admin account login details` - email : `adminW@abv.bg` password : `1234`
+
+
+`User account login details` - email : `test@abv.bg` password : `1234`
+
+
+## How It Works:
+
+- `admin` : The admin is able to add,edit,delete watches,check all bought items from his website by clicking <strong>All Purchase History</strong>
+- `logged in user` : The user is able to rate watches,add watches to his cart,remove watches from his cart,buy watches,check his own purchase history
+- `guest user` : The user is <strong>not</strong> able to rate watches,add watches to cart,buy watches.He can only check watches and their rating
+
+
+<strong>In this file I will provide documentation for backend and frontend</strong>
 
 
 # Backend documentation for WatchShop API:
