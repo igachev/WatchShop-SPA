@@ -70,7 +70,9 @@ JWT_SECRET=my-secret-123 // provide a secret for JsonWebToken
 ADMIN_EMAIL=adminW@abv.bg // You must register in the website with the email you type here in order to be able to login as admin
 
 
-![01 registerAsAdmin](https://github.com/igachev/WatchShop-SPA/assets/102420254/a4b61b5b-47ed-4639-bb91-49288974c168)
+<p align="center">
+ <img src="https://github.com/igachev/WatchShop-SPA/assets/102420254/e1d62db0-bff4-4ecd-b716-3ed86e4a9eab"   border="10"/>
+</p>
 
 SUBSCRIPTION_EMAIL=testivoo@abv.bg // must be a real email which will be used by nodemailer to write emails to users
 
@@ -177,3 +179,110 @@ Here are the available routes:
 - `/about` : display about us page
 - `/contacts` : display contacts page
 - `any invalid route` : display page not found
+
+
+## Images:
+
+
+<p align="center">
+ Watch Catalog
+
+
+ <img src="https://github.com/igachev/WatchShop-SPA/assets/102420254/8f6e5a2e-c463-480f-a149-8599bcb6a51d"   border="10"/>
+</p>
+
+
+<p align="center">
+Loading Spinner
+
+![03 guestLoadingSpinner](https://github.com/igachev/WatchShop-SPA/assets/102420254/837f0ceb-2a70-4c50-b1e1-806ac1ad74da)
+
+</p>
+
+
+<p align="center">
+ Guest Navigation Menu
+
+ ![11 guestNavMenu](https://github.com/igachev/WatchShop-SPA/assets/102420254/c5018fa9-d360-44c5-8b92-16092f27b506)
+
+</p>
+
+
+<p align="center">
+Admin Navigation Menu
+ 
+ ![12 adminNavMenu](https://github.com/igachev/WatchShop-SPA/assets/102420254/880a01a2-a1ef-44a2-9f2e-be4b751a2d4c)
+
+</p>
+
+
+<p align="center">
+ Logged In User Navigation Menu
+
+ ![13 userNavMenu](https://github.com/igachev/WatchShop-SPA/assets/102420254/8da8c9df-3d18-4b9c-8e81-cf371ad8067c)
+
+</p>
+
+
+<p align="center">
+ Login Form Validation
+
+ ![05 loginFormValidation](https://github.com/igachev/WatchShop-SPA/assets/102420254/a7ee3af9-6bdf-44ad-8481-2dcaa842e6ac)
+
+</p>
+
+
+<p align="center">
+ Login Form Error Handling
+ 
+![06 loginErrorHandling](https://github.com/igachev/WatchShop-SPA/assets/102420254/912d5c15-8714-4d2b-90d9-1d4e7b6fcf2d)
+
+</p>
+
+
+<p align="center">
+ Search for watches from specific brand
+
+ ![10 searchResults](https://github.com/igachev/WatchShop-SPA/assets/102420254/2c84531a-e1c5-42ca-8c53-0fbb6d28c8b3)
+
+</p>
+
+
+<p align="center">
+ No Results Found
+
+ ![11 searchNoResults](https://github.com/igachev/WatchShop-SPA/assets/102420254/462355fe-054f-4a01-a041-07877db4016b)
+
+</p>
+
+
+<p align="center">
+ Guest View Of Watch Details
+
+ ![04 guestDetails](https://github.com/igachev/WatchShop-SPA/assets/102420254/9875b810-051e-45df-bf80-ae89bcfab321)
+
+</p>
+
+
+<p align="center">
+ Admin View Of Watch Details
+
+ ![15 adminDetails](https://github.com/igachev/WatchShop-SPA/assets/102420254/ad41be00-d00d-4c72-8e35-bcc20a926d5b)
+
+</p>
+
+
+<p align="center">
+ Logged In User View Of Watch Details
+
+ ![14 userDetails](https://github.com/igachev/WatchShop-SPA/assets/102420254/b78c374e-29a8-4ccb-b29d-ba68745c75da)
+
+</p>
+
+
+<p align="center">
+ Only Logged In User can rate watches from 1 to 5 stars by clicking on a star
+
+ ![16 rate](https://github.com/igachev/WatchShop-SPA/assets/102420254/55fabc46-cad2-4e10-9b1a-d16ecf1c2866)
+
+</p>
