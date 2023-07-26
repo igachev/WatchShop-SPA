@@ -362,3 +362,11 @@ Admin Navigation Menu
  ![23 AboutUs](https://github.com/igachev/WatchShop-SPA/assets/102420254/e993f6e1-2581-4700-97e1-b4deead74411)
 
 </p>
+
+
+<p align="center">
+ Page not found
+
+ ![24 pageNotFound](https://github.com/igachev/WatchShop-SPA/assets/102420254/15e5fa02-2a0a-4e2d-8908-053d5bb1d79f)
+
+</p>
