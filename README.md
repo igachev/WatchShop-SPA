@@ -21,6 +21,9 @@
 `User account login details` - email : `test@abv.bg` password : `1234`
 
 
+<strong>Keep in mind that email `subscription` dont work on the hosted website because the provider prevents it.But it works on the localhost version of my application.Same is true for `page not found` functionality.</strong>
+
+
 ## How It Works:
 
 - `admin` : The admin is able to add,edit,delete watches,check all bought items from his website by clicking <strong>All Purchase History</strong>
@@ -92,7 +95,7 @@ ADMIN_EMAIL=adminW@abv.bg // You must register in the website with the email you
  <img src="https://github.com/igachev/WatchShop-SPA/assets/102420254/e1d62db0-bff4-4ecd-b716-3ed86e4a9eab"   border="10"/>
 </p>
 
-SUBSCRIPTION_EMAIL=testivoo@abv.bg // must be a real email which will be used by nodemailer to write emails to users
+SUBSCRIPTION_EMAIL=testivoo@abv.bg // must provide a real email which will be used by nodemailer to write emails to users
 
 
 SUBSCRIPTION_EMAIL_PASSWORD='1234' // must be the real password for the above mentioned email in order to be used by nodemailer
@@ -205,6 +208,8 @@ Here are the available routes:
 <p align="center">
  Watch Catalog
 
+ Pagination is made by using `ngx-pagination` library
+
 
  <img src="https://github.com/igachev/WatchShop-SPA/assets/102420254/8f6e5a2e-c463-480f-a149-8599bcb6a51d"   border="10"/>
 </p>
@@ -307,7 +312,10 @@ Admin Navigation Menu
 
 
 <p align="center">
- Only Logged In User can rate watches from 1 to 5 stars by clicking on a star
+
+ 
+ Only Logged In User can rate watches from 1 to 5 stars by clicking on a star.Rating is made by using `ng-bootstrap` library component: `rating`
+
 
  ![16 rate](https://github.com/igachev/WatchShop-SPA/assets/102420254/55fabc46-cad2-4e10-9b1a-d16ecf1c2866)
 
@@ -342,5 +350,15 @@ Admin Navigation Menu
  Everyone can subscribe for the newsletter by providing his email address and click Subscribe
 
  ![20 subscription](https://github.com/igachev/WatchShop-SPA/assets/102420254/e7ab0295-954e-4e93-8f00-8344230b4de2)
+
+</p>
+
+
+<p align="center">
+ 
+ About Us page. Used `ng-bootstrap` component: `carousel`
+
+
+ ![23 AboutUs](https://github.com/igachev/WatchShop-SPA/assets/102420254/e993f6e1-2581-4700-97e1-b4deead74411)
 
 </p>
