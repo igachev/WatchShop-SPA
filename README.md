@@ -52,17 +52,9 @@
  - dotenv
 
 
-### Installation:
-
-1. Clone this repository: `git clone https://github.com/igachev/WatchShop-SPA.git`
-2. Go to folder server: `cd server`
-3. Install dependencies: `npm install`
-4. Start the server: `npm start`
-
-
 ### Configuration:
 This application uses a `.env` file to store configuration variables. You can create a `.env` file
-in the root directory of the project and add the following variables:
+in the server directory of the project and add the following variables:
 
 DATABASE_DEVELOPMENT = 
 
@@ -99,6 +91,15 @@ SUBSCRIPTION_EMAIL=testivoo@abv.bg // must provide a real email which will be us
 
 
 SUBSCRIPTION_EMAIL_PASSWORD='1234' // must be the real password for the above mentioned email in order to be used by nodemailer
+
+
+### Installation:
+
+1. Clone this repository: `git clone https://github.com/igachev/WatchShop-SPA.git`
+2. Go to folder server: `cd server`
+3. Install dependencies: `npm install`
+4. Make sure you created <strong>.env</strong> file in server folder and populate it with correct variables.
+5. Start the server: `npm start`
 
 
 ### Usage:
@@ -164,13 +165,13 @@ This is a single page application built with Angular,TypeScript,Bootstrap
 
 ### Installation:
 
-5. Make sure you completed the above mentioned backend installation
-6. Go to folder client: `cd client`
-7. Go to folder app: `cd app`
-8. Install dependencies: `npm install`
-9. Go to folder src: `cd src`
-10. Go to folder app: `cd app`
-11. Start the application: `ng s --open`
+6. Make sure you completed the above mentioned backend installation
+7. Go to folder client: `cd client`
+8. Go to folder app: `cd app`
+9. Install dependencies: `npm install`
+10. Go to folder src: `cd src`
+11. Go to folder app: `cd app`
+12. Start the application: `ng s --open`
 
 
 ### Folder Structure:
