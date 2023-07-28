@@ -17,7 +17,7 @@ export class CreateProductComponent implements OnDestroy {
   subscription!: Subscription;
 
 constructor(private watchService: WatchService,
-            private router: Router,
+          //  private router: Router,
             private toastService: ToastService) {}
 
 
