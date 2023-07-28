@@ -14,6 +14,7 @@ import { NgbRating, NgbRatingModule } from '@ng-bootstrap/ng-bootstrap';
 import { DebugElement } from '@angular/core';
 import { By } from '@angular/platform-browser';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { WATCHES } from 'src/app/mockData/watches';
 
 
 fdescribe('DetailsComponent', () => {
@@ -52,26 +53,7 @@ fdescribe('DetailsComponent', () => {
     fixture = TestBed.createComponent(DetailsComponent);
     component = fixture.componentInstance;
 
-    mockWatchService.getOne.and.returnValue(of({
-      _id:'1',
-      brand:'Casio',
-      model:'G-Shock',
-      image: 'https://images.unsplash.com/photo-1533139502658-0198f920d8e8?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=742&q=80',
-      battery:'5v',
-      mechanism:"quartz",
-      price:200,
-      strap:'rubber',
-      glass:'mineral',
-      waterResistance:'30 ATM',
-      rating: [
-          {          
-  userId:"64ad27025a3776a02491bf3a",
-  userRating:4,
-  _id:'64ad27185a3776a02491bf41'
-          }
-      ]
-    
-  } as IWatch ))
+    mockWatchService.getOne.and.returnValue(of(WATCHES[0] as IWatch ))
 
   mockWatchService.getRating.and.returnValue(of(4))
   mockToastService.status = new BehaviorSubject<any>(null)
@@ -83,7 +65,19 @@ fdescribe('DetailsComponent', () => {
     el = fixture.debugElement;
   });
 
-
+  it('should see correct watch details', () => {
+    const watchBrand = el.query(By.css('.card-title'))
+    const watchDetails = el.queryAll(By.css('p'))
+    expect(watchBrand.nativeElement.textContent).toBe('Brand: Casio')
+    expect(watchDetails[0].nativeElement.textContent).toBe('Model: G-Shock')
+    expect(watchDetails[1].nativeElement.textContent).toBe('Battery: 5v')
+    expect(watchDetails[2].nativeElement.textContent).toBe('Mechanism: quartz')
+    expect(watchDetails[3].nativeElement.textContent).toBe('Price: €200.00')
+    expect(watchDetails[4].nativeElement.textContent).toBe('Strap: rubber')
+    expect(watchDetails[5].nativeElement.textContent).toBe('Glass: mineral')
+    expect(watchDetails[6].nativeElement.textContent).toBe('Water Resistance: 30 ATM')
+    expect(watchDetails[8].nativeElement.textContent).toContain('Average Rating: (*)★(*)★(*)★(*)★( )☆ 4.00')
+  })
 
   it('guest user should not see any buttons', () => {
     let allBtns = el.queryAll(By.css('a'))
@@ -119,4 +113,32 @@ fdescribe('DetailsComponent', () => {
       expect(ownerBtns).toBeNull()
   })
 
+
+  it('admin should see buttons Edit and Delete', () => {
+    mockUserService.isLogged.and.returnValue(true)
+    mockUserService.isAdmin.and.returnValue(true)
+    fixture.detectChanges()
+    const btns = el.queryAll(By.css('a'))
+    expect(btns.length).toBe(2)
+    expect(btns[0].nativeElement.textContent).toBe('Edit')
+    expect(btns[1].nativeElement.textContent).toBe('Delete')
+  })
+
+  it('admin should not see button Add To Cart', () => {
+    mockUserService.isLogged.and.returnValue(true)
+    mockUserService.isAdmin.and.returnValue(true)
+    fixture.detectChanges()
+    const btns = el.queryAll(By.css('a'))
+    expect(btns.length).toBe(2)
+    expect(btns[0].nativeElement.textContent).not.toBe('Add To Cart')
+    expect(btns[1].nativeElement.textContent).not.toBe('Add To Cart')
+  })
+
+  it("admin should not see text 'You must be logged in to buy'",() => {
+    mockUserService.isLogged.and.returnValue(true)
+    mockUserService.isAdmin.and.returnValue(true)
+    fixture.detectChanges();
+    const smallElement = el.queryAll(By.css('p'))
+    expect(smallElement[smallElement.length-1].nativeElement.textContent).not.toBe('You must be logged in to buy')
+    })
 });
