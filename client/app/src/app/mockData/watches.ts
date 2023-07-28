@@ -1,4 +1,6 @@
-export const WATCHES = [
+import { IWatch } from "../shared/interfaces/IWatch";
+
+export const WATCHES: IWatch[] = [
    {
     _id:'1',
     brand:'Casio',

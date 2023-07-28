@@ -61,7 +61,7 @@ fdescribe('WatchesComponent', () => {
     expect(h2Element.nativeElement.textContent).not.toBe(2)
   });
 
-  it('should consist of 5 or less watches because pagination limit is 5',() => {
+  it('the first page should consist of 5 or less watches because pagination limit is 5',() => {
     let cardElements = el.queryAll(By.css('.card'))
     expect(cardElements.length).toBeLessThanOrEqual(5)
     expect(cardElements.length).not.toBe(6)
