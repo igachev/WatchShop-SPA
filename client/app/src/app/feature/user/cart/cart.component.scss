@@ -1,8 +1,14 @@
 .container-fluid {
     background-color: grey;
     min-height: 600px;
+
     .main-row {
         padding: 10px;
+
+        .buy-info {
+        text-align: center;
+        
+        }
        
         .card {
             background-color: rgba(73, 72, 72, 0.863);
