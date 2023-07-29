@@ -119,4 +119,10 @@ fdescribe('CreateProductComponent', () => {
     expect(mockToastService.showToast).toHaveBeenCalledWith('error',serverSideError.error.message,true)
   }))
 
+  it('should have only one button called Submit', () => {
+    const buttons = el.queryAll(By.css('button'))
+    expect(buttons.length).toBe(1)
+    expect(buttons[0].nativeElement.textContent).toBe('Submit')
+  })
+
 });
