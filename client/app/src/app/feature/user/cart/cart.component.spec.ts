@@ -4,12 +4,13 @@ import { CartComponent } from './cart.component';
 import { UserService } from 'src/app/core/services/user.service';
 import { ToastService } from 'src/app/core/services/toast.service';
 import { DebugElement } from '@angular/core';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, NgForm } from '@angular/forms';
 import { SharedModule } from 'src/app/shared/shared.module';
 import { BehaviorSubject, of } from 'rxjs';
 import { By } from '@angular/platform-browser';
 import { IWatch } from 'src/app/shared/interfaces/IWatch';
 import { WATCHES } from 'src/app/mockData/watches';
+import { USERS } from 'src/app/mockData/users';
 
 fdescribe('CartComponent', () => {
   let component: CartComponent;
@@ -75,6 +76,40 @@ fdescribe('CartComponent', () => {
     expect(component.cartItems[0]).toEqual(WATCHES[2])
   }));
 
+  it('should remove an item from cart', fakeAsync(() => {
+   mockUserService.deleteCartItem.and.returnValue(of('cart item removed'))
+   spyOn(window, 'confirm').and.returnValue(true);
+   component.deleteCartItem('3')
+   
+   tick()
+   expect(mockUserService.deleteCartItem).toHaveBeenCalled()
+    expect(mockToastService.showToast).toHaveBeenCalledWith('success','Item Removed',true)
+  }))
 
+  it('should buy an watch and remove it from cart', fakeAsync(() => {
+    const myForm:any = {
+      value: {
+        name: 'ivan',
+        phone: '1234567890',
+        address: 'Varna',
+        quantity: 1
+      }
+    };
+
+    const watchId = '3'
+    const price = 200
+
+    spyOn(localStorage, 'getItem').and.returnValue('3');
+    spyOn(myForm, 'value').and.returnValue(myForm.value);
+
+    mockUserService.addToUserPurchaseHistory.and.returnValue(of(USERS[1]));
+    mockUserService.deleteCartItem.and.returnValue(of('cart item removed'));
+
+    component.buy(myForm as NgForm, watchId, price); // Call the buy function with the form and watchId, price
+    tick();
+
+    expect(mockToastService.showToast).toHaveBeenCalledWith('success', 'Item Was Purchased', true);
+    expect(mockUserService.getCart).toHaveBeenCalled()
+  }))
 
 });
