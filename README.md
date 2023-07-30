@@ -359,9 +359,16 @@ Admin Navigation Menu
 
 
 <p align="center">
+ After subscription the user will receive email containing this information
+
+ ![25 emailSubscription](https://github.com/igachev/WatchShop-SPA/assets/102420254/cb702c70-bef9-4370-bea6-fd4464046578)
+
+</p>
+
+
+<p align="center">
  
  About Us page. Used `ng-bootstrap` component: `carousel`
-
 
  ![23 AboutUs](https://github.com/igachev/WatchShop-SPA/assets/102420254/e993f6e1-2581-4700-97e1-b4deead74411)
 
