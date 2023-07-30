@@ -26,7 +26,7 @@
 
 ## How It Works:
 
-- `admin` : The admin is able to add,edit,delete watches,check all bought items from his website by clicking <strong>All Purchase History</strong>
+- `admin` : The admin is able to add,edit,delete watches,check all bought items from his website by clicking <strong>All Purchase History.</strong> From <strong>All Purchase History </strong> page the admin can see the customer's orders and send them to the respective addresses.
 - `logged in user` : The user is able to rate watches,add watches to his cart,remove watches from his cart,buy watches,check his own purchase history
 - `guest user` : The user is <strong>not</strong> able to rate watches,add watches to cart,buy watches.He can only check watches and their rating
 
@@ -138,7 +138,10 @@ The server listens on port 5000 by default. Here are the endpoints:
 
 # Frontend documentation for WatchShop
 
-This is a single page application built with Angular,TypeScript,Bootstrap
+This is a single page application built with Angular,TypeScript,Bootstrap.
+
+
+<strong>Every page has web responsive design</strong>
 
 ### Requirements:
 - @angular/animations
