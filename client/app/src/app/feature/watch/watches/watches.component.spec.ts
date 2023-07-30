@@ -97,4 +97,9 @@ fdescribe('WatchesComponent', () => {
     expect(spans[4].nativeElement.textContent).toBe('1')
     expect(spans[6].nativeElement.textContent).toBe('2')
   })
+
+  it('result from method watchService.getAll should be equal to WATCHES', () => {
+    expect(component.watches.length).toBe(6)
+    expect(component.watches).toEqual(WATCHES)
+  })
 });
