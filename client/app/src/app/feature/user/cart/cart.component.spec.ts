@@ -105,7 +105,7 @@ fdescribe('CartComponent', () => {
     mockUserService.addToUserPurchaseHistory.and.returnValue(of(USERS[1]));
     mockUserService.deleteCartItem.and.returnValue(of('cart item removed'));
 
-    component.buy(myForm as NgForm, watchId, price); // Call the buy function with the form and watchId, price
+    component.buy(myForm as NgForm, watchId, price);
     tick();
 
     expect(mockToastService.showToast).toHaveBeenCalledWith('success', 'Item Was Purchased', true);
