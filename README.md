@@ -177,6 +177,14 @@ This is a single page application built with Angular,TypeScript,Bootstrap.
 12. Start the application: `ng s --open`
 
 
+### Unit tests:
+1. Go to folder client: `cd client`
+2. Go to folder app: `cd app`
+3. Go to folder src: `cd src`
+4. Go to folder app: `cd app`
+5. Run the tests: `npm test`
+
+
 ### Folder Structure:
 - `core` : It contains static components, services, functional guards
 - `shared` : It contains reusable components, interfaces
