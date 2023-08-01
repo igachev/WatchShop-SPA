@@ -11,6 +11,6 @@ export const adminAuthGuard: CanActivateFn = (route, state) => {
   if (isAdmin && isLogged) {
     return true;
   } else {
-    return router.createUrlTree(['/login']);
+    return router.createUrlTree(['/users/login']);
   }
 };

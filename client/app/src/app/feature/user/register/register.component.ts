@@ -26,7 +26,7 @@ register(myForm:NgForm): void {
  this.subscription = this.userService.register({email,password,repeatPassword})
   .subscribe({
     next: () => {
-      this.router.navigate(['/login'])
+      this.router.navigate(['/users/login'])
     },
     error: (err:HttpErrorResponse) => {
       if (err.error instanceof ErrorEvent) {

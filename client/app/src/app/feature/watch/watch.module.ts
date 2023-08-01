@@ -12,6 +12,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { NgxPaginationModule } from 'ngx-pagination';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { AppRoutingModule } from 'src/app/app-routing.module';
+import { WatchRoutingModule } from './watch-routing.module';
 
 
 
@@ -32,8 +33,7 @@ import { AppRoutingModule } from 'src/app/app-routing.module';
     NgxPaginationModule,
     NgbModule,
     ReactiveFormsModule,
-    
-    AppRoutingModule,
+    WatchRoutingModule
   ]
 })
 export class WatchModule { }

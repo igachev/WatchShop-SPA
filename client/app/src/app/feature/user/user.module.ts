@@ -8,6 +8,7 @@ import { AllPurchaseHistoryComponent } from './all-purchase-history/all-purchase
 import { FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { SharedModule } from 'src/app/shared/shared.module';
+import { UserRoutingModule } from './user-routing.module';
 
 
 
@@ -24,7 +25,8 @@ import { SharedModule } from 'src/app/shared/shared.module';
     CommonModule,
     FormsModule,
     HttpClientModule,
-    SharedModule
+    SharedModule,
+    UserRoutingModule
   ],
  
 })

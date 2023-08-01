@@ -59,7 +59,7 @@ fdescribe('RegisterComponent', () => {
     tick()
 
     expect(mockUserService.register).toHaveBeenCalled()
-    expect(router.navigate).toHaveBeenCalledWith(['/login'])
+    expect(router.navigate).toHaveBeenCalledWith(['/users/login'])
     expect(mockToastService.showToast).not.toHaveBeenCalled()
   }))
 
