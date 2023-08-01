@@ -199,11 +199,11 @@ Here are the available routes:
 
 
 - `/` : homepage which redirects to `/watches`
-- `/login` : display login page
-- `/register` : display register page
-- `/cart` : display user's cart page
-- `/purchaseHistory` : display user's purchase history
-- `/allPurchaseHistory` : display all bought products by users (only the owner of the shop can see this)
+- `/users/login` : display login page
+- `/users/register` : display register page
+- `/users/cart` : display user's cart page
+- `/users/purchaseHistory` : display user's purchase history
+- `/users/allPurchaseHistory` : display all bought products by users (only the owner of the shop can see this)
 - `/watches` : display the watch catalog
 - `/watches/create` : the owner can add new watch to his catalog
 - `/watches/:watchId/edit` : the owner can edit watch details
