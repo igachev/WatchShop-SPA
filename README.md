@@ -185,6 +185,13 @@ This is a single page application built with Angular,TypeScript,Bootstrap.
 5. Run the tests: `npm test`
 
 
+<p align="center">
+ 
+ ![26 tests](https://github.com/igachev/WatchShop-SPA/assets/102420254/a3b33983-db9a-4f61-bfd8-e75927e12061)
+
+</p>
+
+
 ### Folder Structure:
 - `core` : It contains static components, services, functional guards
 - `shared` : It contains reusable components, interfaces
