@@ -193,7 +193,7 @@ This is a single page application built with Angular,TypeScript,Bootstrap.
 
 
 ### Folder Structure:
-- `core` : It contains static components, services, functional guards
+- `core` : It contains static components, services, functional guards, http interceptors
 - `shared` : It contains reusable components, interfaces
 - `feature` : Contains all distinct modules.The components of each module share  related functionality.We have two modules: user, watch.
 - `app.module` : Entry point of the application
