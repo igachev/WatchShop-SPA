@@ -5,14 +5,21 @@
     h2 {
     padding: 0;
     margin: 0;
+    
+    animation: text-animation 800ms ease;
     }
 }
-.container-md-12 {
+.container-fluid {
     height: 700px;
     background-color: grey;
     color: #fff;
     
+    form {
+       
+        animation: form-animation 1000ms ease-in-out;
+    }
     .row {
+        
         small {
             color: rgba(150, 23, 23, 0.89);
         }
@@ -22,5 +29,30 @@
         display: flex;
         align-items: center;
         justify-content: center;
+        
     }
 }
+
+@keyframes form-animation {
+    0% {
+      transform: translateX(-200%);
+    }
+
+    100% {
+      transform: translateX(0);
+    }
+  }
+
+  @keyframes text-animation {
+    0% {
+      transform: scale(0);
+    }
+
+    90% {
+        transform: scale(1.1);
+    }
+  
+    100% {
+      transform: scale(1);
+    }
+  }

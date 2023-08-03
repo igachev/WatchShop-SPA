@@ -4,7 +4,7 @@
   <h2>Login</h2>
 </div>
 
-<div class="container-md-12 d-flex justify-content-center align-items-center">
+<div class="container-fluid d-flex justify-content-center align-items-center">
   
     <form #myForm="ngForm" (ngSubmit)="login(myForm)">
        <div class="mb-3 row">
@@ -63,7 +63,9 @@
       
 
       <div class="mb-3 row btn-row">
-        <button class="btn btn-primary col-md-4 col-sm-3">Login</button>
+        
+          <button class="btn btn-primary col-md-8 col-sm-4">Login</button>
+        
       </div>
       <app-toast></app-toast>
     </form>
