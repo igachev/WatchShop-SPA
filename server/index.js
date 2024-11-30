@@ -1,4 +1,5 @@
 require('dotenv').config();
+const mongooseAsyncHooks = require('@mongoosejs/async-hooks'); // added it to fix deploy error
 const express = require('express')
 const app = express()
 const cors = require('cors')
